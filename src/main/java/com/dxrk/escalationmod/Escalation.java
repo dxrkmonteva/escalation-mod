@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod;
 
+import com.dxrk.escalationmod.pool.PoolRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -20,6 +21,7 @@ public class Escalation {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        LOGGER.info("Escalation mod: commonSetup — сюда позже подключим загрузку пула усложнений.");
+        LOGGER.info("Escalation mod: commonSetup — загружаю пул усложнений...");
+        PoolRegistry.init();
     }
 }
