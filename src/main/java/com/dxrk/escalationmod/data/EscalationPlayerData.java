@@ -17,6 +17,8 @@ public class EscalationPlayerData implements IEscalationPlayerData {
     private long nextSpawnAtTick = 0L;
     private int legendaryCountEver = 0;
     private int deathCounter = 0;
+    private boolean hasWon = false;
+    private boolean endlessMode = false;
 
     private final Set<String> seenPoolIds = new LinkedHashSet<>();
     private final List<EscalationInstance> activeInstances = new ArrayList<>();
@@ -77,12 +79,34 @@ public class EscalationPlayerData implements IEscalationPlayerData {
     }
 
     @Override
+    public boolean hasWon() {
+        return hasWon;
+    }
+
+    @Override
+    public void setHasWon(boolean won) {
+        this.hasWon = won;
+    }
+
+    @Override
+    public boolean isEndlessMode() {
+        return endlessMode;
+    }
+
+    @Override
+    public void setEndlessMode(boolean endless) {
+        this.endlessMode = endless;
+    }
+
+    @Override
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
         tag.putLong("realPlaytimeTicks", realPlaytimeTicks);
         tag.putLong("nextSpawnAtTick", nextSpawnAtTick);
         tag.putInt("legendaryCountEver", legendaryCountEver);
         tag.putInt("deathCounter", deathCounter);
+        tag.putBoolean("hasWon", hasWon);
+        tag.putBoolean("endlessMode", endlessMode);
 
         ListTag seenTag = new ListTag();
         for (String id : seenPoolIds) {
@@ -105,6 +129,8 @@ public class EscalationPlayerData implements IEscalationPlayerData {
         this.nextSpawnAtTick = tag.getLong("nextSpawnAtTick");
         this.legendaryCountEver = tag.getInt("legendaryCountEver");
         this.deathCounter = tag.getInt("deathCounter");
+        this.hasWon = tag.getBoolean("hasWon");
+        this.endlessMode = tag.getBoolean("endlessMode");
 
         seenPoolIds.clear();
         if (tag.contains("seenPoolIds")) {

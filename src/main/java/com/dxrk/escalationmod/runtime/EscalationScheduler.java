@@ -5,6 +5,7 @@ import com.dxrk.escalationmod.data.EscalationCapabilities;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
 import com.dxrk.escalationmod.pool.EscalationDefinition;
 import com.dxrk.escalationmod.pool.PoolRegistry;
+import com.dxrk.escalationmod.win.WinConditionManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -59,10 +60,14 @@ public class EscalationScheduler {
 
         for (ServerPlayer player : event.getServer().getPlayerList().getPlayers()) {
             player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data -> {
-                if (currentTick >= data.getNextSpawnAtTick()) {
-                    trySpawn(player, data, currentTick);
-                    data.setNextSpawnAtTick(currentTick + randomIntervalTicks());
+                if (currentTick < data.getNextSpawnAtTick()) {
+                    return;
                 }
+                if (data.hasWon() && !data.isEndlessMode()) {
+                    return;
+                }
+                trySpawn(player, data, currentTick);
+                data.setNextSpawnAtTick(currentTick + randomIntervalTicks());
             });
         }
     }
@@ -96,6 +101,10 @@ public class EscalationScheduler {
         LOGGER.info("Escalation: игроку {} выпало '{}' (id={}, тир={}, редкость={}), легендарок всего: {}",
                 player.getName().getString(), definition.name, definition.id, tier, rarity,
                 data.getLegendaryCountEver());
+
+        if (rarity == Rarity.LEGENDARY) {
+            WinConditionManager.checkWinCondition(player, data);
+        }
     }
 
     private static EscalationDefinition pickUnseenDefinition(int tier, Set<String> seenIds) {

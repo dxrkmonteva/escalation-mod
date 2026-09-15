@@ -23,6 +23,12 @@ public interface IEscalationPlayerData {
     int getDeathCounter();
     void incrementDeathCounter();
 
+    boolean hasWon();
+    void setHasWon(boolean won);
+
+    boolean isEndlessMode();
+    void setEndlessMode(boolean endless);
+
     CompoundTag serializeNBT();
     void deserializeNBT(CompoundTag tag);
 }
