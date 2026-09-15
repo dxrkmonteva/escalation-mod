@@ -91,7 +91,7 @@ public class EscalationScheduler {
                 "§e⚠ НОВОЕ УСЛОЖНЕНИЕ [Тир " + tier + " · " + rarity.name() + "] " + definition.name
                         + " — " + definition.description));
         player.level().playSound(null, player.blockPosition(),
-                SoundEvents.NOTE_BLOCK_PLING, SoundSource.PLAYERS, 1.0f, 1.0f);
+                SoundEvents.NOTE_BLOCK_PLING.value(), SoundSource.PLAYERS, 1.0f, 1.0f);
 
         LOGGER.info("Escalation: игроку {} выпало '{}' (id={}, тир={}, редкость={}), легендарок всего: {}",
                 player.getName().getString(), definition.name, definition.id, tier, rarity,
