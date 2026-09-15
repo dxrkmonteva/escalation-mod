@@ -1,6 +1,7 @@
 package com.dxrk.escalationmod.runtime;
 
 import com.dxrk.escalationmod.pool.EscalationDefinition;
+import net.minecraft.nbt.CompoundTag;
 
 import java.util.UUID;
 
@@ -38,6 +39,14 @@ public class EscalationInstance {
         this.currentMultiplier = 1.0;
     }
 
+    private EscalationInstance(String instanceId, String poolId, Rarity rarity, long spawnedAtTick, String stackMode) {
+        this.instanceId = instanceId;
+        this.poolId = poolId;
+        this.rarity = rarity;
+        this.spawnedAtTick = spawnedAtTick;
+        this.stackMode = stackMode;
+    }
+
     public void tickEscalation() {
         if (!escalationActive) {
             return;
@@ -50,5 +59,36 @@ public class EscalationInstance {
 
     public double getEffectiveMultiplier() {
         return rarity.getBaseMultiplier() * currentMultiplier;
+    }
+
+    public CompoundTag serializeNBT() {
+        CompoundTag tag = new CompoundTag();
+        tag.putString("instanceId", instanceId);
+        tag.putString("poolId", poolId);
+        tag.putString("rarity", rarity.name());
+        tag.putLong("spawnedAtTick", spawnedAtTick);
+        tag.putString("stackMode", stackMode == null ? "multiplicative" : stackMode);
+        tag.putBoolean("escalationActive", escalationActive);
+        tag.putDouble("escalationPerSecond", escalationPerSecond);
+        tag.putInt("escalationDurationSec", escalationDurationSec);
+        tag.putInt("escalationElapsedSec", escalationElapsedSec);
+        tag.putDouble("currentMultiplier", currentMultiplier);
+        return tag;
+    }
+
+    public static EscalationInstance deserializeNBT(CompoundTag tag) {
+        EscalationInstance instance = new EscalationInstance(
+                tag.getString("instanceId"),
+                tag.getString("poolId"),
+                Rarity.valueOf(tag.getString("rarity")),
+                tag.getLong("spawnedAtTick"),
+                tag.getString("stackMode")
+        );
+        instance.escalationActive = tag.getBoolean("escalationActive");
+        instance.escalationPerSecond = tag.getDouble("escalationPerSecond");
+        instance.escalationDurationSec = tag.getInt("escalationDurationSec");
+        instance.escalationElapsedSec = tag.getInt("escalationElapsedSec");
+        instance.currentMultiplier = tag.getDouble("currentMultiplier");
+        return instance;
     }
 }
