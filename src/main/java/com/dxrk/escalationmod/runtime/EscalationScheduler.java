@@ -19,7 +19,6 @@ import com.mojang.logging.LogUtils;
 
 import java.security.SecureRandom;
 import java.util.List;
-import java.util.Set;
 
 @Mod.EventBusSubscriber(modid = Escalation.MODID)
 public class EscalationScheduler {
@@ -66,6 +65,9 @@ public class EscalationScheduler {
                 if (data.hasWon() && !data.isEndlessMode()) {
                     return;
                 }
+                if (currentTick < data.getMercyPauseEndTick()) {
+                    return;
+                }
                 trySpawn(player, data, currentTick);
                 data.setNextSpawnAtTick(currentTick + randomIntervalTicks());
             });
@@ -76,10 +78,9 @@ public class EscalationScheduler {
         double elapsedHours = data.getRealPlaytimeTicks() / 20.0 / 3600.0;
         int tier = TierSelector.selectTier(elapsedHours, TOTAL_TARGET_HOURS, ORDER, JITTER);
 
-        EscalationDefinition definition = pickUnseenDefinition(tier, data.getSeenPoolIds());
+        EscalationDefinition definition = pickDefinition(tier);
         if (definition == null) {
-            LOGGER.warn("Escalation: для {} не нашлось новых усложнений на тире {} (пул тира исчерпан)",
-                    player.getName().getString(), tier);
+            LOGGER.warn("Escalation: для {} тир {} пуст в пуле — это баг данных", player.getName().getString(), tier);
             return;
         }
 
@@ -107,16 +108,12 @@ public class EscalationScheduler {
         }
     }
 
-    private static EscalationDefinition pickUnseenDefinition(int tier, Set<String> seenIds) {
+    private static EscalationDefinition pickDefinition(int tier) {
         List<EscalationDefinition> tierPool = PoolRegistry.getByTier(tier);
-        List<EscalationDefinition> unseen = tierPool.stream()
-                .filter(def -> !seenIds.contains(def.id))
-                .toList();
-
-        if (unseen.isEmpty()) {
+        if (tierPool.isEmpty()) {
             return null;
         }
-        return unseen.get(RNG.nextInt(unseen.size()));
+        return tierPool.get(RNG.nextInt(tierPool.size()));
     }
 
     private static long randomIntervalTicks() {

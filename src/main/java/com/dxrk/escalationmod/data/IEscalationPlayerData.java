@@ -29,6 +29,9 @@ public interface IEscalationPlayerData {
     boolean isEndlessMode();
     void setEndlessMode(boolean endless);
 
+    long getMercyPauseEndTick();
+    void setMercyPauseEndTick(long tick);
+
     CompoundTag serializeNBT();
     void deserializeNBT(CompoundTag tag);
 }
