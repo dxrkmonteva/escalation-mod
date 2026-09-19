@@ -3,6 +3,8 @@ package com.dxrk.escalationmod.runtime;
 import com.dxrk.escalationmod.Escalation;
 import com.dxrk.escalationmod.data.EscalationCapabilities;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
+import com.dxrk.escalationmod.network.EscalationNetwork;
+import com.dxrk.escalationmod.network.ShowToastPacket;
 import com.dxrk.escalationmod.pool.EscalationDefinition;
 import com.dxrk.escalationmod.pool.PoolRegistry;
 import com.dxrk.escalationmod.win.WinConditionManager;
@@ -14,6 +16,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.network.PacketDistributor;
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 
@@ -85,6 +88,15 @@ public class EscalationScheduler {
         }
 
         Rarity rarity = RarityRoller.roll(tier);
+        applyAndNotify(player, data, tier, rarity, definition, currentTick);
+    }
+
+    /**
+     * Общая часть между обычным спавном и debug-командами: создаёт инстанс,
+     * применяет его к данным игрока, шлёт чат-сообщение + звук + тост, проверяет победу.
+     */
+    private static void applyAndNotify(ServerPlayer player, IEscalationPlayerData data,
+                                        int tier, Rarity rarity, EscalationDefinition definition, long currentTick) {
         EscalationInstance instance = new EscalationInstance(definition, rarity, currentTick);
 
         data.getSeenPoolIds().add(definition.id);
@@ -99,6 +111,9 @@ public class EscalationScheduler {
         player.level().playSound(null, player.blockPosition(),
                 SoundEvents.NOTE_BLOCK_PLING.value(), SoundSource.PLAYERS, 1.0f, 1.0f);
 
+        EscalationNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player),
+                new ShowToastPacket(tier, rarity.name(), definition.name, definition.description));
+
         LOGGER.info("Escalation: игроку {} выпало '{}' (id={}, тир={}, редкость={}), легендарок всего: {}",
                 player.getName().getString(), definition.name, definition.id, tier, rarity,
                 data.getLegendaryCountEver());
@@ -106,6 +121,29 @@ public class EscalationScheduler {
         if (rarity == Rarity.LEGENDARY) {
             WinConditionManager.checkWinCondition(player, data);
         }
+    }
+
+    /** Форсирует обычный (случайная редкость) спавн немедленно — для debug-команды. */
+    public static void debugForceSpawn(ServerPlayer player) {
+        player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data -> {
+            long currentTick = player.level().getGameTime();
+            trySpawn(player, data, currentTick);
+        });
+    }
+
+    /** Форсирует гарантированно LEGENDARY спавн немедленно — чтобы проверить тост/эскалацию без ожидания редкости. */
+    public static void debugForceLegendaryToast(ServerPlayer player) {
+        player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data -> {
+            long currentTick = player.level().getGameTime();
+            double elapsedHours = data.getRealPlaytimeTicks() / 20.0 / 3600.0;
+            int tier = TierSelector.selectTier(elapsedHours, TOTAL_TARGET_HOURS, ORDER, JITTER);
+            EscalationDefinition definition = pickDefinition(tier);
+            if (definition == null) {
+                LOGGER.warn("Escalation debug: тир {} пуст в пуле", tier);
+                return;
+            }
+            applyAndNotify(player, data, tier, Rarity.LEGENDARY, definition, currentTick);
+        });
     }
 
     private static EscalationDefinition pickDefinition(int tier) {

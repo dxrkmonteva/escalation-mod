@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod;
 
+import com.dxrk.escalationmod.network.EscalationNetwork;
 import com.dxrk.escalationmod.pool.PoolRegistry;
 import com.dxrk.escalationmod.runtime.RuntimeSmokeTest;
 import net.minecraftforge.fml.common.Mod;
@@ -18,6 +19,7 @@ public class Escalation {
     public Escalation() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
+        EscalationNetwork.register();
         LOGGER.info("Escalation mod: конструктор вызван, регистрация прошла успешно.");
     }
 

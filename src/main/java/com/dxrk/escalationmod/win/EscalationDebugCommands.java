@@ -3,6 +3,7 @@ package com.dxrk.escalationmod.win;
 import com.dxrk.escalationmod.Escalation;
 import com.dxrk.escalationmod.data.EscalationCapabilities;
 import com.dxrk.escalationmod.mercy.MercyRuleManager;
+import com.dxrk.escalationmod.runtime.EscalationScheduler;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.minecraft.commands.CommandSourceStack;
@@ -62,11 +63,31 @@ public class EscalationDebugCommands {
                             return 1;
                         }));
 
+        var spawnToast = Commands.literal("spawntoast")
+                .executes(ctx -> {
+                    ServerPlayer player = ctx.getSource().getPlayerOrException();
+                    EscalationScheduler.debugForceSpawn(player);
+                    ctx.getSource().sendSuccess(() -> Component.literal(
+                            "Escalation debug: форсирован немедленный спавн усложнения (случайная редкость)"), false);
+                    return 1;
+                });
+
+        var spawnLegendaryToast = Commands.literal("spawnlegendarytoast")
+                .executes(ctx -> {
+                    ServerPlayer player = ctx.getSource().getPlayerOrException();
+                    EscalationScheduler.debugForceLegendaryToast(player);
+                    ctx.getSource().sendSuccess(() -> Component.literal(
+                            "Escalation debug: форсирован немедленный LEGENDARY-спавн (для проверки тоста/эскалации)"), false);
+                    return 1;
+                });
+
         dispatcher.register(Commands.literal("escalation")
                 .then(Commands.literal("debug")
                         .requires(source -> source.hasPermission(2))
                         .then(addLegendary)
                         .then(forceDeaths)
-                        .then(setMercyRemaining)));
+                        .then(setMercyRemaining)
+                        .then(spawnToast)
+                        .then(spawnLegendaryToast)));
     }
 }
