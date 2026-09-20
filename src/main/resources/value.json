@@ -1,0 +1,3152 @@
+[
+  {
+    "id": "escalation_hand_0001",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "tool_durability_loss_rate",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0002",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "hunger_depletion_rate",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0003",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "трение льда применяется даже к обычным блокам с шансом 5%."
+  },
+  {
+    "id": "escalation_hand_0004",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "night_vision_duration",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0005",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "saturation_regen_rate",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0006",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "footstep_sound_radius",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0007",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "шанс 5%, что скрафченный инструмент/оружие сразу теряет 1 прочность."
+  },
+  {
+    "id": "escalation_hand_0008",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "hunger_depletion_rate_night_outdoor",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0009",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "лодки медленно теряют \"прочность\" и разбиваются чуть быстрее от ударов."
+  },
+  {
+    "id": "escalation_hand_0010",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "кровать не всегда сбрасывает время суток с первого раза (шанс \"не заснул\" 15%)."
+  },
+  {
+    "id": "escalation_hand_0011",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "небольшой шанс (2%) выронить один предмет из инвентаря при получении урона."
+  },
+  {
+    "id": "escalation_hand_0012",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уменьшенный радиус прорисовки (render distance -1 чанк) до конца сессии."
+  },
+  {
+    "id": "escalation_hand_0013",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пассивные мобы (коровы, овцы) с малым шансом атакуют при приближении."
+  },
+  {
+    "id": "escalation_hand_0014",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "armor_durability_loss_rate",
+    "base_value": 25,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0015",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "mob_movement_speed",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0016",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "hunger_depletion_rate_underground",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0017",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "дождь идёт заметно чаще, и во время дождя видимость снижена."
+  },
+  {
+    "id": "escalation_hand_0018",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "часть блоков (стекло, листья) с шансом ломается от простого касания."
+  },
+  {
+    "id": "escalation_hand_0019",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "mob_night_damage_bonus",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0020",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "armor_effectiveness",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0021",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при добыче руды есть шанс получить \"отравление\" на пару секунд (имитация газа/пыли)."
+  },
+  {
+    "id": "escalation_hand_0022",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "mob_health_zombie_skeleton",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0023",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "компас и карта работают с небольшой погрешностью (смещение стрелки)."
+  },
+  {
+    "id": "escalation_hand_0024",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "movement_speed_cold_water",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0025",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "mob_spawn_density_night",
+    "base_value": 30,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0026",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "вспышка при выходе из пещеры на поверхность (кратковременная белая пелена)."
+  },
+  {
+    "id": "escalation_hand_0027",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при падении прочности инструмента ниже 20% скорость его работы падает вдвое."
+  },
+  {
+    "id": "escalation_hand_0028",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "если голод падает до 0, начинается урон сразу (не только на \"легко/сложно\")."
+  },
+  {
+    "id": "escalation_hand_0029",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "часть криперов невидима до момента, пока не подойдёшь на 3 блока."
+  },
+  {
+    "id": "escalation_hand_0030",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "fall_damage",
+    "base_value": 25,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0031",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Иссера и Дракона можно призвать повторно с увеличенным здоровьем (+30%), и они спавнятся автоматически раз в N часов, если не убиты."
+  },
+  {
+    "id": "escalation_hand_0032",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "голод нельзя восстановить едой ниже определённого качества (нужно готовить/комбинировать еду)."
+  },
+  {
+    "id": "escalation_hand_0033",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в игровой день на 2–3 минуты резко темнеет (имитация затмения), спавн мобов активен даже днём."
+  },
+  {
+    "id": "escalation_hand_0034",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "часть блоков земли/камня осыпается спустя время после установки (как песок, но медленно)."
+  },
+  {
+    "id": "escalation_hand_0035",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "деревья с малым шансом роняют на игрока урон при рубке (падающая ветка)."
+  },
+  {
+    "id": "escalation_hand_0036",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при смерти часть предметов \"поджигается\" и теряется безвозвратно (защита от фарма смертью)."
+  },
+  {
+    "id": "escalation_hand_0037",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "случайные биомы временно \"замерзают\", урон от холода при долгом нахождении без источника тепла."
+  },
+  {
+    "id": "escalation_hand_0038",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в час спавнится усиленный элитный моб (миниbosс) с уникальными способностями, который целенаправленно идёт к игроку."
+  },
+  {
+    "id": "escalation_hand_0039",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после смерти игрок теряет часть максимального здоровья на время (регенерируется постепенно за 10 минут игры)."
+  },
+  {
+    "id": "escalation_hand_0040",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "портал в Энд требует больше OКO Края, чем обычно."
+  },
+  {
+    "id": "escalation_hand_0041",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при крафте редких предметов (алмазных/незеритовых) есть шанс \"порчи\" — предмет крафтится с пометкой \"нестабильный\" и рассыпается через время, если не \"закалить\" в специальном блоке."
+  },
+  {
+    "id": "escalation_hand_0042",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "ночью появляются \"тени\" — невидимые до атаки мобы с высоким уроном, но малым здоровьем."
+  },
+  {
+    "id": "escalation_hand_0043",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "система детектит \"жильё\" игрока (по кровати/сундукам) и раз в несколько игровых дней организует направленный набег на это место, даже если игрок далеко."
+  },
+  {
+    "id": "escalation_hand_0044",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при смерти в радиусе точки смерти появляется зона с постоянным уроном (нельзя просто вернуться и забрать вещи налегке)."
+  },
+  {
+    "id": "escalation_hand_0045",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "hunger_thirst_depletion_underground_no_torch",
+    "base_value": 100,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0046",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "незеритовые/алмазные инструменты не защищены от \"порчи предметов\" при ударе молнией (редкое событие)."
+  },
+  {
+    "id": "escalation_hand_0047",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "верстак время от времени \"глючит\" и требует повторного расположения предметов (визуальный сдвиг сетки)."
+  },
+  {
+    "id": "escalation_hand_0048",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "глобальный статус-эффект \"Опасность\" активируется раз в несколько часов на 5 минут: все мобы агрятся на игрока в радиусе 64 блоков одновременно."
+  },
+  {
+    "id": "escalation_hand_0049",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в игровой день в случайном месте карты (в радиусе действия игрока) спавнится \"аномалия\" — зона с искажённой физикой (телепорт, гравитация, урон), которая медленно расширяется, если её не уничтожить."
+  },
+  {
+    "id": "escalation_hand_0050",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "обычная еда перестаёт восстанавливать сытость полностью, эффективна только \"продвинутая\" еда (готовка обязательна)."
+  },
+  {
+    "id": "escalation_hand_0051",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "вся броня и оружие имеют скрытый шанс \"сломаться навсегда\" (без возможности почить) при критическом уроне."
+  },
+  {
+    "id": "escalation_hand_0052",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "рандомные землетрясения (визуальная тряска + падающие блоки гравия/песка в радиусе) в любом биоме."
+  },
+  {
+    "id": "escalation_hand_0053",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько часов спавнится \"тёмный клон\" игрока с его же экипировкой (на момент спавна), который атакует и пытается убить оригинал."
+  },
+  {
+    "id": "escalation_hand_0054",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "вводится \"глобальный таймер конца сессии\": если не выполнить финальную цель (убить дракона, например) до истечения времени, начинается перманентный урон всему миру (лава прорывается случайно, блоки исчезают)."
+  },
+  {
+    "id": "escalation_hand_0055",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "на максимальном тире даже пассивные мобы становятся агрессивными, животные атакуют, деревня может \"взбунтоваться\" (жители получают эффект враждебности)."
+  },
+  {
+    "id": "escalation_hand_0056",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "вводится ограниченное число жизней (hardcore-режим встроенно), после исчерпания — game over с полным вайпом прогресса усложнений (но не мира)."
+  },
+  {
+    "id": "escalation_hand_0057",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько часов игрока может \"затянуть\" в кастомное мини-измерение — тесный лабиринт с усиленными мобами, откуда нужно выбраться за ограниченное время, иначе — телепорт с большим уроном и потерей части инвентаря."
+  },
+  {
+    "id": "escalation_hand_0058",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "на 10 тире периодически (раз в 2–3 часа) спавнится уникальный \"Страж хаоса\" — сильный кастомный моб с несколькими фазами боя, который специально идёт искать игрока по всей карте."
+  },
+  {
+    "id": "escalation_hand_0059",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "деревянные блоки под ногами изредка предательски скрипят, слышно мобам в радиусе 8 блоков."
+  },
+  {
+    "id": "escalation_hand_0060",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "стрелка компаса на секунду \"задумывается\", прежде чем показать направление на спавн."
+  },
+  {
+    "id": "escalation_hand_0061",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "кресало с шансом 10% не поджигает блок с первого раза во время дождя."
+  },
+  {
+    "id": "escalation_hand_0062",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "прирученные лошади \"забывают\" хозяина через 3 игровых дня без взаимодействия."
+  },
+  {
+    "id": "escalation_hand_0063",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "на блоках-лестницах слегка повышен шанс споткнуться при беге."
+  },
+  {
+    "id": "escalation_hand_0064",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "звук стука в двери у жителей воспроизводится с заметной задержкой."
+  },
+  {
+    "id": "escalation_hand_0065",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "сундуки с шансом 3% \"заедают\" при открытии, нужен повторный клик."
+  },
+  {
+    "id": "escalation_hand_0066",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "ручной попугай повторяет звуки мобов с 2-секундной задержкой, сбивая ориентацию на слух."
+  },
+  {
+    "id": "escalation_hand_0067",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "удочка с малым шансом соскальзывает с предмета в воде."
+  },
+  {
+    "id": "escalation_hand_0068",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "campfire_ignite_time",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0069",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "операции на наковальне стоят на 1 уровень опыта больше."
+  },
+  {
+    "id": "escalation_hand_0070",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "дождь начинается резко, без плавного нарастания облачности."
+  },
+  {
+    "id": "escalation_hand_0071",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "вагонетки с малым шансом на миг застревают на стыках рельс."
+  },
+  {
+    "id": "escalation_hand_0072",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "паутина рвётся сама через пару игровых дней, если рядом никто не проходил."
+  },
+  {
+    "id": "escalation_hand_0073",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "movement_speed_after_wakeup",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0074",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "торговцы иногда предлагают невыгодную сделку, замаскированную под выгодную."
+  },
+  {
+    "id": "escalation_hand_0075",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "эхо в пещерах искажает направление звука шагов мобов."
+  },
+  {
+    "id": "escalation_hand_0076",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при телепортации через портал Нижнего мира чёрный экран держится чуть дольше обычного."
+  },
+  {
+    "id": "escalation_hand_0077",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "xp_orb_speed",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0078",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "bee_calm_smoke_required",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0079",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "жители-фермеры иногда сажают в грядку не то, что нужно."
+  },
+  {
+    "id": "escalation_hand_0080",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "двери жителей закрываются на пол секунды медленнее, впуская случайных мобов ночью."
+  },
+  {
+    "id": "escalation_hand_0081",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "стрела на полном натяжении лука иногда чуть отклоняется от курса."
+  },
+  {
+    "id": "escalation_hand_0082",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "грибы на земле исчезают быстрее, если их не собрать вовремя."
+  },
+  {
+    "id": "escalation_hand_0083",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "furnace_xp_output",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0084",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "зачерпывание ведром воды/лавы занимает чуть больше времени."
+  },
+  {
+    "id": "escalation_hand_0085",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "осёл с почти пустым инвентарём иногда на секунду отказывается идти."
+  },
+  {
+    "id": "escalation_hand_0086",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "комбинирование зачарованных книг стоит на 1 уровень опыта больше."
+  },
+  {
+    "id": "escalation_hand_0087",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "перед рассветом на миг мелькает тёмная вспышка экрана — просто атмосфера."
+  },
+  {
+    "id": "escalation_hand_0088",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "плиты (slabs) под весом персонажа визуально чуть \"проседают\"."
+  },
+  {
+    "id": "escalation_hand_0089",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "стол зачарований требует чуть больше полок для тех же уровней."
+  },
+  {
+    "id": "escalation_hand_0090",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "beacon_beam_visible_distance",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0091",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "chicken_egg_lay_rate",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0092",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "следы игрока на снегу остаются заметно дольше обычного, выдавая маршрут."
+  },
+  {
+    "id": "escalation_hand_0093",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "светящиеся частицы разлетаются при приближении игрока (чисто косметика)."
+  },
+  {
+    "id": "escalation_hand_0094",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "два прирученных волка одного хозяина рычат друг на друга и мешкают с атакой, если оба рядом."
+  },
+  {
+    "id": "escalation_hand_0095",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "факелы под открытым небом гаснут во время сильного дождя без навеса."
+  },
+  {
+    "id": "escalation_hand_0096",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "компас рядом с крупными скоплениями руды указывает неверно."
+  },
+  {
+    "id": "escalation_hand_0097",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "furnace_fuel_required",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0098",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "hive_honey_production_rate_no_flowers",
+    "base_value": 30,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0099",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "след слизня на секунду сбивает управление персонажем."
+  },
+  {
+    "id": "escalation_hand_0100",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "странствующий торговец убегает при виде игрока с оружием в руке."
+  },
+  {
+    "id": "escalation_hand_0101",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "приставные лестницы редко ломаются при очень частом использовании (20+ раз подряд)."
+  },
+  {
+    "id": "escalation_hand_0102",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при ударе эндермена он телепортируется чаще, иногда цепляя и игрока на пол блока."
+  },
+  {
+    "id": "escalation_hand_0103",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "на большой высоте (Y>100) стрельба из лука подвержена лёгкому боковому сносу."
+  },
+  {
+    "id": "escalation_hand_0104",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "долгое пребывание в грибных лесах Нижнего мира вызывает лёгкую тряску камеры."
+  },
+  {
+    "id": "escalation_hand_0105",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "привязанные к причалу лодки могут \"уплыть\" сами во время шторма."
+  },
+  {
+    "id": "escalation_hand_0106",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "вода рядом с заражённой (зомби) деревней иногда даёт слабую тошноту."
+  },
+  {
+    "id": "escalation_hand_0107",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "железный голем медлит с атакой, если рядом больше одного жителя."
+  },
+  {
+    "id": "escalation_hand_0108",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редстоун-пыль на дистанции более 15 блоков иногда обрывается на тик раньше."
+  },
+  {
+    "id": "escalation_hand_0109",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "зельеварение иногда тратит на один ингредиент больше положенного."
+  },
+  {
+    "id": "escalation_hand_0110",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "глубокие пещеры периодически издают фальшивый звук шагов моба."
+  },
+  {
+    "id": "escalation_hand_0111",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "beacon_effect_radius",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0112",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "компас восстановления иногда указывает не совсем точно на точку смерти."
+  },
+  {
+    "id": "escalation_hand_0113",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "жители прячутся вместо работы, если рядом (10 блоков) враждебный моб."
+  },
+  {
+    "id": "escalation_hand_0114",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "на возвышенностях у стрел появляется лёгкий \"ветровой\" снос."
+  },
+  {
+    "id": "escalation_hand_0115",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "repaired_item_durability_output",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0116",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "рычаги и кнопки редко \"залипают\", требуя повторного нажатия."
+  },
+  {
+    "id": "escalation_hand_0117",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "колокол в деревне созывает жителей с 2-секундной задержкой."
+  },
+  {
+    "id": "escalation_hand_0118",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "животные редко находят лазейку в неполном заборе загона."
+  },
+  {
+    "id": "escalation_hand_0119",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "трезубец с \"Верностью\" редко застревает в ближайшем блоке вместо руки."
+  },
+  {
+    "id": "escalation_hand_0120",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "надписи на табличках со временем визуально \"выцветают\" (косметика)."
+  },
+  {
+    "id": "escalation_hand_0121",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "snow_golem_throw_rate",
+    "base_value": 20,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0122",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "синий лёд редко трескается под весом от долгого катания по нему."
+  },
+  {
+    "id": "escalation_hand_0123",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "underwater_vision_no_breathing",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0124",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "стол зачарований редко требует на уровень больше для нужного итога."
+  },
+  {
+    "id": "escalation_hand_0125",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "попугай слетает с плеча от громкого звука и не возвращается сам."
+  },
+  {
+    "id": "escalation_hand_0126",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "управление лодкой на скорости реагирует на повороты с небольшой задержкой."
+  },
+  {
+    "id": "escalation_hand_0127",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "незавершённый портал в Край издаёт звук, привлекающий ближайших мобов."
+  },
+  {
+    "id": "escalation_hand_0128",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "во время грозы жители прячутся и отказываются торговать."
+  },
+  {
+    "id": "escalation_hand_0129",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "villager_price_inflation_per_game_hour",
+    "base_value": 1,
+    "unit": "percent_per_game_hour",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0130",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "убийство моба рядом с деревней на день ухудшает условия торговли в ней."
+  },
+  {
+    "id": "escalation_hand_0131",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "5+ минут без источника света дают редкие фальшивые звуки шагов за спиной."
+  },
+  {
+    "id": "escalation_hand_0132",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "заброшенные структуры со временем частично осыпаются, если долго не возвращаться."
+  },
+  {
+    "id": "escalation_hand_0133",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "несколько прирученных животных одного хозяина периодически ссорятся между собой."
+  },
+  {
+    "id": "escalation_hand_0134",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при здоровье ниже 30% частицы оставляют след, привлекающий хищников издалека."
+  },
+  {
+    "id": "escalation_hand_0135",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "item-карты со временем \"выцветают\" и требуют докопирования у картографа."
+  },
+  {
+    "id": "escalation_hand_0136",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "tool_first_hit_effectiveness_after_idle",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0137",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "критический добивающий удар редко взрывается облаком, кратко ослепляющим игрока."
+  },
+  {
+    "id": "escalation_hand_0138",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "враждебные мобы теперь мигрируют группами по карте вместо статичного спавна."
+  },
+  {
+    "id": "escalation_hand_0139",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при падении репутации деревни её Железные Големы становятся враждебны к игроку."
+  },
+  {
+    "id": "escalation_hand_0140",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "зачарованные книги из подземелий редко накладывают временное проклятие голода."
+  },
+  {
+    "id": "escalation_hand_0141",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "на месте смерти появляется слабый полупрозрачный \"эхо-двойник\", атакующий при возврате."
+  },
+  {
+    "id": "escalation_hand_0142",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "mob_damage_full_moon",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0143",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "fall_damage_gravity_pocket",
+    "base_value": 100,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0144",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "грибные биомы Нижнего мира дают замедление при долгом вдыхании без маски."
+  },
+  {
+    "id": "escalation_hand_0145",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "чем дольше непрерывно копаешь без выхода на поверхность, тем сильнее спавн."
+  },
+  {
+    "id": "escalation_hand_0146",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "жители запоминают частый обман и персонально повышают цены для игрока."
+  },
+  {
+    "id": "escalation_hand_0147",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "enchantment_decay_rate_per_hour_unused",
+    "base_value": 1,
+    "unit": "percent_per_hour",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0148",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "украденные из заброшенных структур предметы редко замедляют при виде жителей."
+  },
+  {
+    "id": "escalation_hand_0149",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "постоянные враждебные мобы у одного места учатся заходить с флангов."
+  },
+  {
+    "id": "escalation_hand_0150",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "не собранная вовремя ферма частично портит культуру в несъедобный вариант."
+  },
+  {
+    "id": "escalation_hand_0151",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "молния в радиусе 10 блоков на несколько секунд трясёт прицел."
+  },
+  {
+    "id": "escalation_hand_0152",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "прирученные животные редко \"сбегают\" к точке приручения при долгом отсутствии хозяина."
+  },
+  {
+    "id": "escalation_hand_0153",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "несколько игровых дней без сна слегка \"плывёт\" экран и снижается точность."
+  },
+  {
+    "id": "escalation_hand_0154",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "слишком частые сделки с одним жителем подряд временно \"выматывают\" его."
+  },
+  {
+    "id": "escalation_hand_0155",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "трава по утрам в некоторых биомах даёт лёгкое замедление без обуви."
+  },
+  {
+    "id": "escalation_hand_0156",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "телепортация через End Gateway редко выбрасывает чуть в стороне от цели."
+  },
+  {
+    "id": "escalation_hand_0157",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пиглины агрятся сильнее, если на игроке меньше 3 золотых предметов."
+  },
+  {
+    "id": "escalation_hand_0158",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "постоянная пересадка одной культуры на одном месте снижает урожайность со временем."
+  },
+  {
+    "id": "escalation_hand_0159",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий компас удачи (кастом) иногда указывает на ловушку вместо клада."
+  },
+  {
+    "id": "escalation_hand_0160",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "датчик вибрации активируется чаще во время боя, привлекая Стража."
+  },
+  {
+    "id": "escalation_hand_0161",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "седло требует переустановки раз в несколько игровых дней."
+  },
+  {
+    "id": "escalation_hand_0162",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "алтари/маяки без регулярной \"подпитки\" ресурсами теряют часть эффекта."
+  },
+  {
+    "id": "escalation_hand_0163",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "в деревнях по ночам иногда слышны шаги в пустых домах — ложная тревога."
+  },
+  {
+    "id": "escalation_hand_0164",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "убийство одной особи стаи (волки/пиллагеры) временно усиливает урон остальных против игрока."
+  },
+  {
+    "id": "escalation_hand_0165",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пауки в радиусе слышимости координируются, даже если видит цель лишь один."
+  },
+  {
+    "id": "escalation_hand_0166",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "первый скрафченный алмазный/незеритовый инструмент получает случайный непредсказуемый эффект."
+  },
+  {
+    "id": "escalation_hand_0167",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "портал в Нижний мир, не использованный 2+ дня, редко телепортирует в соседнюю точку."
+  },
+  {
+    "id": "escalation_hand_0168",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "зоны глубокой тьмы медленно растут, если внутри часто активировать вибрацию."
+  },
+  {
+    "id": "escalation_hand_0169",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "деревья, посаженные слишком близко, \"воруют\" рост друг у друга."
+  },
+  {
+    "id": "escalation_hand_0170",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после серии убийств подряд в радиусе на сутки повышается спавн враждебных мобов."
+  },
+  {
+    "id": "escalation_hand_0171",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "якорь возрождения теряет заряд быстрее при частых смертях рядом с ним."
+  },
+  {
+    "id": "escalation_hand_0172",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "принесённая в Нижний мир вода редко испаряется рядом с источником лавы."
+  },
+  {
+    "id": "escalation_hand_0173",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "рядом с порталом Края иногда звучит искажённая подсказка, порой ложная."
+  },
+  {
+    "id": "escalation_hand_0174",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "незачищенный аванпост пиллагеров со временем \"разрастается\" новыми патрулями."
+  },
+  {
+    "id": "escalation_hand_0175",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "combat_fatigue_damage_speed",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0176",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "посевы у заражённого зомби-нашествием участка редко прорастают в несъедобный вариант."
+  },
+  {
+    "id": "escalation_hand_0177",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "небрежная выемка лута из End City редко телепортирует в случайную комнату структуры."
+  },
+  {
+    "id": "escalation_hand_0178",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "час реального времени без встречи с живым существом даёт слабый дебафф тревоги."
+  },
+  {
+    "id": "escalation_hand_0179",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "заброшенные Железные Големы со временем начинают атаковать любого без разбора."
+  },
+  {
+    "id": "escalation_hand_0180",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после 50 операций наковальня требует \"ремонта\", иначе цена в опыте резко растёт."
+  },
+  {
+    "id": "escalation_hand_0181",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "повторное разграбление одной структуры даёт заметно менее ценные предметы."
+  },
+  {
+    "id": "escalation_hand_0182",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "укус зомби распространяется на соседние дома в деревне быстрее, если не изолировать."
+  },
+  {
+    "id": "escalation_hand_0183",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "сон без ограждённой сверху комнаты редко прерывается ночным пробуждением со слабостью."
+  },
+  {
+    "id": "escalation_hand_0184",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при повторном призыве Дракон Края активнее разрушает блоки на острове."
+  },
+  {
+    "id": "escalation_hand_0185",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при смертях чаще раза в 10 минут штраф опыта растёт с каждой."
+  },
+  {
+    "id": "escalation_hand_0186",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после успешного рейда на деревню повышается шанс визита мародёров к базе игрока."
+  },
+  {
+    "id": "escalation_hand_0187",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Элитра без ремонта теряет манёвренность планирования, а не только прочность."
+  },
+  {
+    "id": "escalation_hand_0188",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "слишком плотная посадка нилиума превращает соседние блоки в бесплодную пустошь."
+  },
+  {
+    "id": "escalation_hand_0189",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "inventory_near_full_movement_speed",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0190",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "частично разграбленный (не до конца) океанский храм со временем усиливает своих Стражей."
+  },
+  {
+    "id": "escalation_hand_0191",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "слишком частый звон колокола со временем перестаёт вовремя созывать жителей."
+  },
+  {
+    "id": "escalation_hand_0192",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "радиус вибрации Стража расширяется каждый раз, когда он не находит цель."
+  },
+  {
+    "id": "escalation_hand_0193",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "давно не посещаемая шахта регенерирует мобов заново при следующем визите."
+  },
+  {
+    "id": "escalation_hand_0194",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "эндер-жемчуг на дистанции 40+ блоков редко телепортирует с небольшим отклонением по высоте."
+  },
+  {
+    "id": "escalation_hand_0195",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "незачищаемые шалкеры в End City со временем размножаются почкованием."
+  },
+  {
+    "id": "escalation_hand_0196",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий нечестный товар у торговца даёт временный дебафф после использования."
+  },
+  {
+    "id": "escalation_hand_0197",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "взорвавшийся у определённой постройки крипер учит следующих целиться в такие же."
+  },
+  {
+    "id": "escalation_hand_0198",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "маяк без должной подпитки ресурсами редко \"перегорает\" в кратковременный негативный эффект."
+  },
+  {
+    "id": "escalation_hand_0199",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в 7–14 дней все враждебные мобы на карте на ночь синхронизируют атаки на игрока."
+  },
+  {
+    "id": "escalation_hand_0200",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкое уникальное дерево при вырубке накладывает проклятие голода до конца дня."
+  },
+  {
+    "id": "escalation_hand_0201",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "в Нижнем мире изредка капает лава из случайных точек потолка."
+  },
+  {
+    "id": "escalation_hand_0202",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "убийство эндерменов временно усиливает следующего заспавненного (стакается до 10 раз в сутки)."
+  },
+  {
+    "id": "escalation_hand_0203",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Иссер, убитый в незачищенной зоне, редко способен самовоскреснуть позже."
+  },
+  {
+    "id": "escalation_hand_0204",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько часов мир на минуту замирает, кроме игрока и одного усиленного моба рядом."
+  },
+  {
+    "id": "escalation_hand_0205",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие бури из частиц временно выжигают траву на своём пути по равнинам."
+  },
+  {
+    "id": "escalation_hand_0206",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "сутки без движения в одном чанке вдвое ускоряют истощение окрестных ресурсов."
+  },
+  {
+    "id": "escalation_hand_0207",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после 100+ убийств одного вида его оставшиеся особи начинают избегать открытых пространств."
+  },
+  {
+    "id": "escalation_hand_0208",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие короткие смерчи разбрасывают незакреплённые предметы и рыхлые блоки."
+  },
+  {
+    "id": "escalation_hand_0209",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "интенсивная добыча одного ресурса снижает частоту его повторного спавна в новых чанках."
+  },
+  {
+    "id": "escalation_hand_0210",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Иссерная роза заражает обычные цветы рядом, распространяясь как сорняк."
+  },
+  {
+    "id": "escalation_hand_0211",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "статуи в разрушенных порталах редко предлагают мини-загадку: успех — баф, провал — проклятие."
+  },
+  {
+    "id": "escalation_hand_0212",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий блуждающий остров Края может столкнуться с основным островом, разрушая постройки."
+  },
+  {
+    "id": "escalation_hand_0213",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "избыточный запас одного ресурса (10000+ блоков) частично \"портится\" раз в сутки."
+  },
+  {
+    "id": "escalation_hand_0214",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "искажённые грибы Нижнего мира редко пускают под землю корни-пружины."
+  },
+  {
+    "id": "escalation_hand_0215",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "маяк без должной подпитки редко даёт временный негативный эффект вместо позитивного."
+  },
+  {
+    "id": "escalation_hand_0216",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уничтоженный аванпост восстанавливается через несколько дней без застройки рядом."
+  },
+  {
+    "id": "escalation_hand_0217",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "incoming_damage_low_health",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0218",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "грибница медленно и необратимо распространяется на соседнюю траву."
+  },
+  {
+    "id": "escalation_hand_0219",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "потревоженный, но не убитый шалкер зовёт на помощь соседей по структуре."
+  },
+  {
+    "id": "escalation_hand_0220",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уникальные биомы при долгом присутствии игрока начинают спавнить более редких тематических мобов."
+  },
+  {
+    "id": "escalation_hand_0221",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько недель одна случайная ночь длится вдвое дольше без предупреждения."
+  },
+  {
+    "id": "escalation_hand_0222",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "синий лёд медленно расползается по воде в холодных биомах, если не растапливать."
+  },
+  {
+    "id": "escalation_hand_0223",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий уникальный моб медленно приближается к острову Края извне при долгом пребывании там."
+  },
+  {
+    "id": "escalation_hand_0224",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "компас душ со временем усиливает активность нежити рядом с собой."
+  },
+  {
+    "id": "escalation_hand_0225",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "слишком быстрый прогресс временно снижает удачу как \"компенсацию\" за успех."
+  },
+  {
+    "id": "escalation_hand_0226",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "грибной остров медленно расширяется за пределы биомной границы при долгом присутствии."
+  },
+  {
+    "id": "escalation_hand_0227",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "океанский монумент со временем слабо притягивает ближайшие лодки к своей структуре."
+  },
+  {
+    "id": "escalation_hand_0228",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкое 2–3-минутное визуальное искажение мира намекает на приближение чего-то большего."
+  },
+  {
+    "id": "escalation_hand_0229",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "farm_yield_after_20_harvests",
+    "base_value": 50,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0230",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "место смерти многократно призванного Иссера медленно превращает почву в souI sand."
+  },
+  {
+    "id": "escalation_hand_0231",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после близкого взрыва крипера ночью прицел заметно трясётся до рассвета."
+  },
+  {
+    "id": "escalation_hand_0232",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий \"заражённый\" участок леса медленно превращает деревья во враждебные к касанию."
+  },
+  {
+    "id": "escalation_hand_0233",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие трещины в земле медленно заполняются лавой снизу, угрожая постройкам рядом."
+  },
+  {
+    "id": "escalation_hand_0234",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в сутки экран на миг темнеет с неопознанным звуком — источник неизвестен."
+  },
+  {
+    "id": "escalation_hand_0235",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при очень низкой репутации жители физически выталкивают игрока и закрывают двери."
+  },
+  {
+    "id": "escalation_hand_0236",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "старые заброшенные шахты еженедельно частично \"перестраиваются\", устаревая карты."
+  },
+  {
+    "id": "escalation_hand_0237",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "усиленная версия обычного враждебного моба редко спавнится после серии ночных смертей."
+  },
+  {
+    "id": "escalation_hand_0238",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие трещины реальности на несколько часов меняют местами пары блоков."
+  },
+  {
+    "id": "escalation_hand_0239",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "предмет, пролежавший в Ender Chest неделю без использования, теряет случайное зачарование."
+  },
+  {
+    "id": "escalation_hand_0240",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "рой мобов Deep Dark изредка мигрирует к поверхности, если Страж долго простаивал."
+  },
+  {
+    "id": "escalation_hand_0241",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий блок в глубоких пещерах снижает регенерацию здоровья в своём радиусе."
+  },
+  {
+    "id": "escalation_hand_0242",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "каменные статуи храма редко оживают при повторных визитах и атакуют внезапно."
+  },
+  {
+    "id": "escalation_hand_0243",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "воскрешение через якорь души даёт временный дебафф замедления и слабости."
+  },
+  {
+    "id": "escalation_hand_0244",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "ношение металлической брони заметно повышает шанс удара молнии."
+  },
+  {
+    "id": "escalation_hand_0245",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий уникальный зомби-чемпион в золотой броне преследует через несколько биомов."
+  },
+  {
+    "id": "escalation_hand_0246",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "океанские разломы периодически затягивают ближайшие незакреплённые предметы на дно."
+  },
+  {
+    "id": "escalation_hand_0247",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "кровать редко телепортирует спящего в случайную ближайшую точку вместо обычного пробуждения."
+  },
+  {
+    "id": "escalation_hand_0248",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "острова Края медленно рассыпаются по краям при очень долгом пребывании там."
+  },
+  {
+    "id": "escalation_hand_0249",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий кастомный моб-скелет появляется в пустынных храмах и преследует игрока."
+  },
+  {
+    "id": "escalation_hand_0250",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий предмет указывает на ближайшего врага, но слабо истощает владельца, пока используется."
+  },
+  {
+    "id": "escalation_hand_0251",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при 1 HP следующий полученный урон гарантированно смертелен."
+  },
+  {
+    "id": "escalation_hand_0252",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "заражённая грибница со временем даёт заражённым мобам координированное поведение стаи."
+  },
+  {
+    "id": "escalation_hand_0253",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "океанские храмы издают гул, привлекающий морских хищников со всей округи."
+  },
+  {
+    "id": "escalation_hand_0254",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкая 10-минутная зона усиленного спавна Гастов и Блейзов в случайном месте Нижнего мира."
+  },
+  {
+    "id": "escalation_hand_0255",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "случайное убийство мирного жителя в бою на сутки делает игрока врагом для всех жителей."
+  },
+  {
+    "id": "escalation_hand_0256",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "заброшенные шахты со временем спавнят уникального крупного моба из блоков камня и руды."
+  },
+  {
+    "id": "escalation_hand_0257",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при повторном призыве Дракона кристаллы Края редко взрываются мощнее обычного."
+  },
+  {
+    "id": "escalation_hand_0258",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Нижний мир периодически покрывается пепловой бурей, снижающей видимость без защиты лица."
+  },
+  {
+    "id": "escalation_hand_0259",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий эффект на несколько секунд дублирует силуэты мобов на экране, мешая прицеливаться."
+  },
+  {
+    "id": "escalation_hand_0260",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие горные структуры притягивают молнии чаще обычного, создавая опасную зону."
+  },
+  {
+    "id": "escalation_hand_0261",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "заброшенные крепости издают эхо шагов патрулирующего фантома, атакующего внезапно."
+  },
+  {
+    "id": "escalation_hand_0262",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "соляные пустоши Нижнего мира ускоряют испарение воды в бутылках инвентаря."
+  },
+  {
+    "id": "escalation_hand_0263",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редко эндермен при получении урона спавнит временную \"тень\"-копию с половиной здоровья."
+  },
+  {
+    "id": "escalation_hand_0264",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пустынные храмы со временем \"прорастают\" костяными шипами-ловушками вокруг себя."
+  },
+  {
+    "id": "escalation_hand_0265",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "elytra_effectiveness_end_storm",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0266",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "убитый Иссер/Дракон изредка оставляет слабую копию себя на месте гибели."
+  },
+  {
+    "id": "escalation_hand_0267",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "оружие с 500+ убийствами без ремонта начинает слегка ранить владельца при использовании."
+  },
+  {
+    "id": "escalation_hand_0268",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "max_health_deep_caves",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "estimated",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0269",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий сбой заставляет часть автоматизированных ферм временно работать против игрока."
+  },
+  {
+    "id": "escalation_hand_0270",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "фарм боссов чаще 5 раз за сессию призывает уникального карающего моба."
+  },
+  {
+    "id": "escalation_hand_0271",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий временный портал ведёт в мини-версию Нижнего мира прямо посреди Обычного."
+  },
+  {
+    "id": "escalation_hand_0272",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий эффект временно \"замораживает\" крафт продвинутых предметов на несколько минут."
+  },
+  {
+    "id": "escalation_hand_0273",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько дней зомби со всех окрестных чанков одновременно идут к ближайшей деревне."
+  },
+  {
+    "id": "escalation_hand_0274",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полный сет одной брони, ношенный 100+ часов, требует ритуала, чтобы снять."
+  },
+  {
+    "id": "escalation_hand_0275",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие руины древней цивилизации спавнят уникальных стражей-конструктов."
+  },
+  {
+    "id": "escalation_hand_0276",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "очень старые заброшенные шахты со временем полностью обрушиваются, требуя новый путь."
+  },
+  {
+    "id": "escalation_hand_0277",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие трещины в земле постепенно заполняются лавой снизу возле построек."
+  },
+  {
+    "id": "escalation_hand_0278",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "торговля с одним жителем 1000+ раз ухудшает условия сделок со всеми жителями сразу."
+  },
+  {
+    "id": "escalation_hand_0279",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Deep Dark Страж может призвать второго, если не убит достаточно быстро."
+  },
+  {
+    "id": "escalation_hand_0280",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "крайне редкий уникальный NPC появляется раз за сессию, даёт подсказку и исчезает навсегда."
+  },
+  {
+    "id": "escalation_hand_0281",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкая руда при добыче даёт очень ценный ресурс взамен на случайное долгосрочное проклятие."
+  },
+  {
+    "id": "escalation_hand_0282",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие зоны пустыни медленно затягивают под землю незащищённые постройки."
+  },
+  {
+    "id": "escalation_hand_0283",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько дней все положительные эффекты зелий в радиусе временно становятся негативными."
+  },
+  {
+    "id": "escalation_hand_0284",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "долгие дни без общения с NPC дают шанс кратковременного рывка камеры."
+  },
+  {
+    "id": "escalation_hand_0285",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий эндермен-лидер организует одновременный телепорт-набег на базу."
+  },
+  {
+    "id": "escalation_hand_0286",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полная зачистка крепости редко спавнит уникального босса-финал с фазами боя."
+  },
+  {
+    "id": "escalation_hand_0287",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий кастомный биом-вулкан периодически разбрасывает горящие блоки по округе."
+  },
+  {
+    "id": "escalation_hand_0288",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после 10+ убийств Дракона острова Края начинают спавнить эндерменов с постоянным баффом."
+  },
+  {
+    "id": "escalation_hand_0289",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий заражённый лес распространяется, превращая деревья во враждебные к касанию."
+  },
+  {
+    "id": "escalation_hand_0290",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "очень глубокая вода периодически привлекает Стражей со всей близлежащей акватории."
+  },
+  {
+    "id": "escalation_hand_0291",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкое событие превращает случайную деревню в зомби-деревню на несколько часов."
+  },
+  {
+    "id": "escalation_hand_0292",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после победы над рейдом очень редко является усиленный лидер мародёров с местью."
+  },
+  {
+    "id": "escalation_hand_0293",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "armor_effectiveness_worn_without_removing",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_0294",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий летающий моб за пределами острова Края атакует полёты на элитрах."
+  },
+  {
+    "id": "escalation_hand_0295",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уничтоженный маяк оставляет негативную зону до постройки нового."
+  },
+  {
+    "id": "escalation_hand_0296",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "слишком долгая эксплуатация фермы без паузы даёт непригодный, но \"тёмный\" урожай."
+  },
+  {
+    "id": "escalation_hand_0297",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие вожаки Гастов организуют одновременную атаку нескольких на постройки."
+  },
+  {
+    "id": "escalation_hand_0298",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "масштабная добыча в одном районе редко вызывает локальное землетрясение."
+  },
+  {
+    "id": "escalation_hand_0299",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "острова Края периодически покрываются замедляющим льдом, требующим особой защиты."
+  },
+  {
+    "id": "escalation_hand_0300",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "критические удары мобов редко наносят повторный урон вдвое меньшей силы через секунду."
+  },
+  {
+    "id": "escalation_hand_0301",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Crimson-грибница со временем формирует ловушки-щупальца рядом с собой."
+  },
+  {
+    "id": "escalation_hand_0302",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкие подземные храмы с загадками: провал призывает масштабную защиту."
+  },
+  {
+    "id": "escalation_hand_0303",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько недель усиленный спавн враждебных мобов повсеместно на час."
+  },
+  {
+    "id": "escalation_hand_0304",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько дней на 5 минут эффекты дня и ночи меняются местами."
+  },
+  {
+    "id": "escalation_hand_0305",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "четыре стихийных босса поочерёдно появляются раз в несколько недель, каждый со своей ареной."
+  },
+  {
+    "id": "escalation_hand_0306",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз за сессию случайный обычный моб получает временную неубиваемость обычным способом."
+  },
+  {
+    "id": "escalation_hand_0307",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "тысячи добытых блоков в одном биоме медленно превращают его в бесплодную землю."
+  },
+  {
+    "id": "escalation_hand_0308",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий NPC предлагает силу в обмен на стирание части статистики достижений."
+  },
+  {
+    "id": "escalation_hand_0309",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "легендарное гигантское дерево редко генерируется и охраняется древесными стражами с регенерацией."
+  },
+  {
+    "id": "escalation_hand_0310",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редко спавнится копия игрока с его текущим инвентарём на момент появления — дуэль с собой."
+  },
+  {
+    "id": "escalation_hand_0311",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "очень глубокие туннели содержат древних существ, не встречающихся больше нигде."
+  },
+  {
+    "id": "escalation_hand_0312",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий уникальный босс медленно поглощает блоки на своём пути, оставляя пустоту."
+  },
+  {
+    "id": "escalation_hand_0313",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "легендарная структура с многофазным боссом-стражем и загадками-ловушками."
+  },
+  {
+    "id": "escalation_hand_0314",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после определённого игрового времени регенерация здоровья замедляется на всю оставшуюся сессию."
+  },
+  {
+    "id": "escalation_hand_0315",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в месяц игрового времени часть карты временно скрывается туманом войны."
+  },
+  {
+    "id": "escalation_hand_0316",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "приближение к краю карты вызывает нарастающий гул и визуальные искажения."
+  },
+  {
+    "id": "escalation_hand_0317",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий гигантский босс патрулирует океаны, топя лодки и атакуя пловцов."
+  },
+  {
+    "id": "escalation_hand_0318",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "после убийства босса часть его силы переходит следующему обычному мобу той же местности."
+  },
+  {
+    "id": "escalation_hand_0319",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкое многочасовое событие останавливает рост растений и болезни у животных в одном биоме."
+  },
+  {
+    "id": "escalation_hand_0320",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уникальный моб атакует именно в момент появления нового усложнения."
+  },
+  {
+    "id": "escalation_hand_0321",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "активация всех редких статуй на карте (коллекционная механика) призывает финального босса."
+  },
+  {
+    "id": "escalation_hand_0322",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "деревни и аванпосты входят в состояние постоянного взаимного конфликта."
+  },
+  {
+    "id": "escalation_hand_0323",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "со временем вокруг точки возрождения формируется защитное поле мобов-хранителей."
+  },
+  {
+    "id": "escalation_hand_0324",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "истребление вида пассивных мобов на большой территории призывает мстящего духа."
+  },
+  {
+    "id": "escalation_hand_0325",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "легендарная библиотека с уникальными книгами, где ошибка в загадке необратимо её запечатывает."
+  },
+  {
+    "id": "escalation_hand_0326",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий финальный мини-босс появляется при превышении определённого порога прогресса игрока."
+  },
+  {
+    "id": "escalation_hand_0327",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкое событие постепенно поднимает уровень воды в биоме за несколько игровых дней."
+  },
+  {
+    "id": "escalation_hand_0328",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "место первой смерти в игре навсегда помечено слабым постоянным негативным эффектом."
+  },
+  {
+    "id": "escalation_hand_0329",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "гигантская редстоун-структура в глубинах активируется при приближении и запускает ловушки."
+  },
+  {
+    "id": "escalation_hand_0330",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "в мультиплеере усложнения применяются по очереди к разным игрокам, а не сразу ко всем."
+  },
+  {
+    "id": "escalation_hand_0331",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий одноразовый портал ведёт в процедурное измерение с уникальным лутом и опасностями."
+  },
+  {
+    "id": "escalation_hand_0332",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "единственный уникальный NPC за игру предлагает эксклюзивный предмет за огромную цену."
+  },
+  {
+    "id": "escalation_hand_0333",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "очень старые нетронутые участки формируют уникальные редкие руды со временем."
+  },
+  {
+    "id": "escalation_hand_0334",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальный кастомный босс усложнений возвращается сильнее через несколько дней после победы."
+  },
+  {
+    "id": "escalation_hand_0335",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий NPC-призрак предлагает обменять часть прогресса на уникальный артефакт."
+  },
+  {
+    "id": "escalation_hand_0336",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "таймер финальной сессии ускоряется каждый раз при частом фарме боссов."
+  },
+  {
+    "id": "escalation_hand_0337",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкий NPC предлагает построить крепость взамен на ресурсы, но требует защиты во время стройки."
+  },
+  {
+    "id": "escalation_hand_0338",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз за сессию весь звук пропадает на минуту перед внезапным крупным событием."
+  },
+  {
+    "id": "escalation_hand_0339",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько дней случайный чанк временно превращается в непроходимый провал."
+  },
+  {
+    "id": "escalation_hand_0340",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уникальный моб виден силуэтом на горизонте и медленно приближается всю сессию, не атакуя напрямую."
+  },
+  {
+    "id": "escalation_hand_0341",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в несколько дней на минуту частично инвертируется управление персонажем."
+  },
+  {
+    "id": "escalation_hand_0342",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкое событие временно смешивает часть Нижнего мира с Обычным в одном чанке."
+  },
+  {
+    "id": "escalation_hand_0343",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "каждые 10 часов игры приходит текстовое предсказание следующего крупного события без точного времени."
+  },
+  {
+    "id": "escalation_hand_0344",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "гигантский моб пробуждается только после 24+ суммарных часов, проведённых под землёй."
+  },
+  {
+    "id": "escalation_hand_0345",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редчайший ресурс существует в мире в единственном экземпляре без повторной генерации."
+  },
+  {
+    "id": "escalation_hand_0346",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раз в десятки часов случайный биом начинает медленно \"стираться\" от краёв к центру."
+  },
+  {
+    "id": "escalation_hand_0347",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "легендарный сухопутный босс раз за сессию медленно разрушает ландшафт на своём пути."
+  },
+  {
+    "id": "escalation_hand_0348",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уникальный NPC раз за сессию оценивает действия игрока и накладывает соответствующий баф/дебафф."
+  },
+  {
+    "id": "escalation_hand_0349",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "NPC с параллельно растущей экипировкой соревнуется за ресурсы и территорию."
+  },
+  {
+    "id": "escalation_hand_0350",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкое событие временно убирает \"потолок мира\", роняя метеориты в случайных точках."
+  }
+]
