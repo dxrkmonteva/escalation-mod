@@ -26,6 +26,7 @@ public class Escalation {
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("Escalation mod: commonSetup — загружаю пул усложнений...");
         PoolRegistry.init();
+        ValueRegistry.init();
         RuntimeSmokeTest.run();
     }
 }
