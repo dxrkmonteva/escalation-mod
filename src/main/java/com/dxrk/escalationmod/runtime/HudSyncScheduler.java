@@ -21,14 +21,14 @@ import java.util.Map;
 @Mod.EventBusSubscriber(modid = Escalation.MODID)
 public class HudSyncScheduler {
 
-    private static final long END_SOON_THRESHOLD_TICKS = 10L * 60 * 60 * 20; // <10ч — "уже скоро" (раздел 3.2)
+    private static final long END_SOON_THRESHOLD_TICKS = 10L * 60 * 60 * 20;
 
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
 
         long currentTick = event.getServer().overworld().getGameTime();
-        if (currentTick % 20 != 0) return; // раз в секунду
+        if (currentTick % 20 != 0) return;
 
         EscalationWorldData worldData = EscalationWorldData.get(event.getServer().overworld());
         long endRequiredTicks = (long) (worldData.getEndRealHoursThreshold() * 60.0 * 60.0 * 20.0);
@@ -67,7 +67,6 @@ public class HudSyncScheduler {
                         mercyActive, mercyRemaining, nextSpawnRemaining, rows));
     }
 
-    /** Группировка активных инстансов по poolId — для журнала (раздел 10), не зависит от Mercy Rule. */
     private static List<EscalationHudSyncPacket.JournalRow> buildJournalRows(IEscalationPlayerData data) {
         Map<String, List<EscalationInstance>> grouped = new LinkedHashMap<>();
         for (EscalationInstance inst : data.getActiveInstances()) {
@@ -76,10 +75,19 @@ public class HudSyncScheduler {
 
         List<EscalationHudSyncPacket.JournalRow> rows = new ArrayList<>();
         for (Map.Entry<String, List<EscalationInstance>> entry : grouped.entrySet()) {
-            long firstSeen = entry.getValue().stream()
-                    .mapToLong(i -> i.spawnedAtTick)
-                    .min().orElse(0L);
-            rows.add(new EscalationHudSyncPacket.JournalRow(entry.getKey(), entry.getValue().size(), firstSeen));
+            List<EscalationInstance> instances = entry.getValue();
+            long firstSeen = instances.stream().mapToLong(i -> i.spawnedAtTick).min().orElse(0L);
+
+            int common = 0, rare = 0, epic = 0, legendary = 0;
+            for (EscalationInstance inst : instances) {
+                switch (inst.rarity) {
+                    case COMMON -> common++;
+                    case RARE -> rare++;
+                    case EPIC -> epic++;
+                    case LEGENDARY -> legendary++;
+                }
+            }
+            rows.add(new EscalationHudSyncPacket.JournalRow(entry.getKey(), firstSeen, common, rare, epic, legendary));
         }
         rows.sort((a, b) -> Long.compare(a.firstSeenTick, b.firstSeenTick));
         return rows;

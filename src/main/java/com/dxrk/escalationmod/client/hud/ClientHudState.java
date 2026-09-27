@@ -7,7 +7,6 @@ import com.dxrk.escalationmod.pool.PoolRegistry;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Клиентский синглтон — последний полученный снимок HUD-состояния от сервера. */
 public final class ClientHudState {
 
     public static final ClientHudState INSTANCE = new ClientHudState();
@@ -37,7 +36,9 @@ public final class ClientHudState {
             EscalationDefinition def = PoolRegistry.getById(row.poolId);
             String name = def != null ? def.name : row.poolId;
             String description = def != null ? def.description : "";
-            resolved.add(new JournalDisplayRow(row.poolId, name, description, row.count, row.firstSeenTick));
+            int tier = def != null ? def.tier : 0;
+            resolved.add(new JournalDisplayRow(row.poolId, name, description, tier, row.firstSeenTick,
+                    row.commonCount, row.rareCount, row.epicCount, row.legendaryCount));
         }
         this.journalRows = resolved;
         this.hasData = true;
@@ -56,15 +57,28 @@ public final class ClientHudState {
         public final String poolId;
         public final String name;
         public final String description;
-        public final int count;
+        public final int tier;
         public final long firstSeenTick;
+        public final int commonCount;
+        public final int rareCount;
+        public final int epicCount;
+        public final int legendaryCount;
 
-        public JournalDisplayRow(String poolId, String name, String description, int count, long firstSeenTick) {
+        public JournalDisplayRow(String poolId, String name, String description, int tier, long firstSeenTick,
+                                  int commonCount, int rareCount, int epicCount, int legendaryCount) {
             this.poolId = poolId;
             this.name = name;
             this.description = description;
-            this.count = count;
+            this.tier = tier;
             this.firstSeenTick = firstSeenTick;
+            this.commonCount = commonCount;
+            this.rareCount = rareCount;
+            this.epicCount = epicCount;
+            this.legendaryCount = legendaryCount;
+        }
+
+        public int total() {
+            return commonCount + rareCount + epicCount + legendaryCount;
         }
     }
 }

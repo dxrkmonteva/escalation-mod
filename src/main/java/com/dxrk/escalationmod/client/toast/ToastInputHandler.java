@@ -1,6 +1,8 @@
 package com.dxrk.escalationmod.client.toast;
 
 import com.dxrk.escalationmod.Escalation;
+import com.dxrk.escalationmod.client.hud.EscalationJournalScreen;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,7 +18,18 @@ public final class ToastInputHandler {
         ClientToastManager.INSTANCE.tick();
 
         while (EscalationClientKeybinds.SKIP_TOAST.consumeClick()) {
-            ClientToastManager.INSTANCE.skipOldestActive();
+            if (Minecraft.getInstance().screen instanceof EscalationJournalScreen journalScreen) {
+                journalScreen.skipRevealAnimation();
+            } else {
+                ClientToastManager.INSTANCE.skipOldestActive();
+            }
+        }
+
+        while (EscalationClientKeybinds.OPEN_JOURNAL.consumeClick()) {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc.screen == null) {
+                mc.setScreen(new EscalationJournalScreen());
+            }
         }
     }
 }

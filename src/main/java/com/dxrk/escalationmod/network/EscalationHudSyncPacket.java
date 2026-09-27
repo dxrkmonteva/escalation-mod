@@ -10,12 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-/** Сервер -> клиент, раз в секунду: снимок для таймер-бара и журнала (раздел 10). */
 public class EscalationHudSyncPacket {
 
     public final boolean netherUnlocked;
     public final long netherRemainingTicks;
-    public final String endStatus; // "locked_long" | "locked_soon" | "unlocked" — точные часы никогда не шлём (раздел 3.2)
+    public final String endStatus;
     public final boolean mercyPauseActive;
     public final long mercyPauseRemainingTicks;
     public final long nextSpawnRemainingTicks;
@@ -33,15 +32,26 @@ public class EscalationHudSyncPacket {
         this.journalRows = journalRows;
     }
 
+    /** Разбивка по редкости прямо в снимке — тир резолвится на клиенте через PoolRegistry, не шлём. */
     public static class JournalRow {
         public final String poolId;
-        public final int count;
         public final long firstSeenTick;
+        public final int commonCount;
+        public final int rareCount;
+        public final int epicCount;
+        public final int legendaryCount;
 
-        public JournalRow(String poolId, int count, long firstSeenTick) {
+        public JournalRow(String poolId, long firstSeenTick, int commonCount, int rareCount, int epicCount, int legendaryCount) {
             this.poolId = poolId;
-            this.count = count;
             this.firstSeenTick = firstSeenTick;
+            this.commonCount = commonCount;
+            this.rareCount = rareCount;
+            this.epicCount = epicCount;
+            this.legendaryCount = legendaryCount;
+        }
+
+        public int total() {
+            return commonCount + rareCount + epicCount + legendaryCount;
         }
     }
 
@@ -56,8 +66,11 @@ public class EscalationHudSyncPacket {
         buf.writeVarInt(msg.journalRows.size());
         for (JournalRow row : msg.journalRows) {
             buf.writeUtf(row.poolId);
-            buf.writeVarInt(row.count);
             buf.writeVarLong(row.firstSeenTick);
+            buf.writeVarInt(row.commonCount);
+            buf.writeVarInt(row.rareCount);
+            buf.writeVarInt(row.epicCount);
+            buf.writeVarInt(row.legendaryCount);
         }
     }
 
@@ -73,9 +86,12 @@ public class EscalationHudSyncPacket {
         List<JournalRow> rows = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             String poolId = buf.readUtf();
-            int count = buf.readVarInt();
             long firstSeenTick = buf.readVarLong();
-            rows.add(new JournalRow(poolId, count, firstSeenTick));
+            int c = buf.readVarInt();
+            int r = buf.readVarInt();
+            int e = buf.readVarInt();
+            int l = buf.readVarInt();
+            rows.add(new JournalRow(poolId, firstSeenTick, c, r, e, l));
         }
 
         return new EscalationHudSyncPacket(netherUnlocked, netherRemainingTicks, endStatus,

@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 
 import java.security.SecureRandom;
-import java.util.List;
+import java.util.*;
 
 public class MercyRuleManager {
 
@@ -58,11 +58,23 @@ public class MercyRuleManager {
         performRemoval(player, data, false);
     }
 
+    /**
+     * Раздел 9: единица удаления — уникальный id целиком, процент считается от
+     * количества уникальных активных id (не от сырого числа инстансов), выбор — FIFO
+     * по времени первого появления id. Снятые id никак специально "не возвращаются
+     * в пул" — они и так не отфильтрованы от повторного выпадения (см. seenPoolIds).
+     */
     private static void performRemoval(ServerPlayer player, IEscalationPlayerData data, boolean isExtend) {
         List<EscalationInstance> active = data.getActiveInstances();
-        int totalUnique = active.size();
 
-        if (totalUnique == 0) {
+        Map<String, List<EscalationInstance>> grouped = new LinkedHashMap<>();
+        for (EscalationInstance inst : active) {
+            grouped.computeIfAbsent(inst.poolId, k -> new ArrayList<>()).add(inst);
+        }
+
+        int totalUniqueIds = grouped.size();
+
+        if (totalUniqueIds == 0) {
             player.sendSystemMessage(Component.literal(
                     (isExtend ? "§7🛡 Передышка продлена" : "§b🛡 Передышка началась")
                             + " — активных усложнений пока нет, снимать нечего."));
@@ -70,21 +82,38 @@ public class MercyRuleManager {
         }
 
         double percent = REMOVAL_PERCENT_MIN + RNG.nextDouble() * (REMOVAL_PERCENT_MAX - REMOVAL_PERCENT_MIN);
-        int removeCount = Math.min(totalUnique, (int) Math.round(totalUnique * percent));
+        int removeGroupCount = Math.min(totalUniqueIds, (int) Math.round(totalUniqueIds * percent));
 
-        // FIFO: снимаем самые старые (первые в списке, так как новые всегда добавляются в конец).
-        // seenPoolIds НЕ трогаем — id реально был замечен игроком, это исторический факт.
-        active.subList(0, removeCount).clear();
+        List<Map.Entry<String, List<EscalationInstance>>> sortedGroups = new ArrayList<>(grouped.entrySet());
+        sortedGroups.sort((a, b) -> Long.compare(firstSeen(a.getValue()), firstSeen(b.getValue())));
 
-        int actualPercent = (int) Math.round(removeCount * 100.0 / totalUnique);
+        Set<String> idsToRemove = new HashSet<>();
+        for (int i = 0; i < removeGroupCount; i++) {
+            idsToRemove.add(sortedGroups.get(i).getKey());
+        }
+
+        int removedInstanceCount = 0;
+        Iterator<EscalationInstance> it = active.iterator();
+        while (it.hasNext()) {
+            if (idsToRemove.contains(it.next().poolId)) {
+                it.remove();
+                removedInstanceCount++;
+            }
+        }
+
+        int actualPercent = (int) Math.round(removeGroupCount * 100.0 / totalUniqueIds);
 
         player.sendSystemMessage(Component.literal(String.format(
-                "§b🛡 %s: снято %d%% усложнений (%d из %d активных)",
-                isExtend ? "Передышка продлена" : "Передышка", actualPercent, removeCount, totalUnique)));
+                "§b🛡 %s: снято %d%% усложнений (%d из %d уникальных id, %d экземпляров всего)",
+                isExtend ? "Передышка продлена" : "Передышка", actualPercent, removeGroupCount, totalUniqueIds, removedInstanceCount)));
         player.level().playSound(null, player.blockPosition(),
                 SoundEvents.NOTE_BLOCK_PLING.value(), SoundSource.PLAYERS, 1.0f, 1.0f);
 
-        LOGGER.info("Escalation Mercy Rule: у {} снято {} из {} усложнений ({}%)",
-                player.getName().getString(), removeCount, totalUnique, actualPercent);
+        LOGGER.info("Escalation Mercy Rule: у {} снято {} уникальных id ({} экземпляров) из {} уникальных ({}%)",
+                player.getName().getString(), removeGroupCount, removedInstanceCount, totalUniqueIds, actualPercent);
+    }
+
+    private static long firstSeen(List<EscalationInstance> instances) {
+        return instances.stream().mapToLong(i -> i.spawnedAtTick).min().orElse(0L);
     }
 }
