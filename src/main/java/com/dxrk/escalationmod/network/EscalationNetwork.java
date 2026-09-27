@@ -23,6 +23,11 @@ public class EscalationNetwork {
                 ShowToastPacket::encode,
                 ShowToastPacket::decode,
                 ShowToastPacket::handle);
+        CHANNEL.registerMessage(id++,
+                EscalationHudSyncPacket.class,
+                EscalationHudSyncPacket::encode,
+                EscalationHudSyncPacket::decode,
+                EscalationHudSyncPacket::handle);
     }
 
     private EscalationNetwork() {

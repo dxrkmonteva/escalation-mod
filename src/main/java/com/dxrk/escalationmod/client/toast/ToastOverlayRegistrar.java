@@ -1,6 +1,7 @@
 package com.dxrk.escalationmod.client.toast;
 
 import com.dxrk.escalationmod.Escalation;
+import com.dxrk.escalationmod.client.hud.EscalationTimerBarOverlay;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,5 +13,6 @@ public final class ToastOverlayRegistrar {
     @SubscribeEvent
     public static void onRegisterOverlays(RegisterGuiOverlaysEvent event) {
         event.registerAboveAll("escalation_toasts", new EscalationToastOverlay());
+        event.registerAboveAll("escalation_timer_bar", new EscalationTimerBarOverlay());
     }
 }

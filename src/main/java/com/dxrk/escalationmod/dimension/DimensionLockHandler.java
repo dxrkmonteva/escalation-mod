@@ -25,7 +25,8 @@ public class DimensionLockHandler {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    private static final long NETHER_REQUIRED_TICKS = 20L * 60 * 60 * 20;
+    // public — переиспользуется в HudSyncScheduler, чтобы не дублировать константу.
+    public static final long NETHER_REQUIRED_TICKS = 20L * 60 * 60 * 20;
     private static final long MESSAGE_COOLDOWN_TICKS = 60L;
 
     private static final Map<UUID, Long> lastRefusalTick = new HashMap<>();
