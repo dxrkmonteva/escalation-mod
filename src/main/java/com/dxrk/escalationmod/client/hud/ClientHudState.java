@@ -36,7 +36,8 @@ public final class ClientHudState {
         for (EscalationHudSyncPacket.JournalRow row : packet.journalRows) {
             EscalationDefinition def = PoolRegistry.getById(row.poolId);
             String name = def != null ? def.name : row.poolId;
-            resolved.add(new JournalDisplayRow(name, row.count, row.firstSeenTick));
+            String description = def != null ? def.description : "";
+            resolved.add(new JournalDisplayRow(row.poolId, name, description, row.count, row.firstSeenTick));
         }
         this.journalRows = resolved;
         this.hasData = true;
@@ -52,12 +53,16 @@ public final class ClientHudState {
     public List<JournalDisplayRow> getJournalRows() { return journalRows; }
 
     public static class JournalDisplayRow {
+        public final String poolId;
         public final String name;
+        public final String description;
         public final int count;
         public final long firstSeenTick;
 
-        public JournalDisplayRow(String name, int count, long firstSeenTick) {
+        public JournalDisplayRow(String poolId, String name, String description, int count, long firstSeenTick) {
+            this.poolId = poolId;
             this.name = name;
+            this.description = description;
             this.count = count;
             this.firstSeenTick = firstSeenTick;
         }
