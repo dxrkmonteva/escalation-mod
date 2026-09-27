@@ -9448,5 +9448,1427 @@
     "unit": null,
     "value_source": null,
     "notes": "Дикая Республика может благословить или саботировать финальное событие в зависимости от отношений с игроком."
+  },
+  {
+    "id": "escalation_hand_1051",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полное отсутствие взаимодействий с NPC-компаньонами даёт финал в намеренной тишине без свидетелей."
+  },
+  {
+    "id": "escalation_hand_1052",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальная статистика показывает распределение встреченных усложнений по каждому тиру отдельно."
+  },
+  {
+    "id": "escalation_hand_1053",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "десятая легендарка, выпавшая на аномально низком тире, даёт редчайший курьёзный вариант титула."
+  },
+  {
+    "id": "escalation_hand_1054",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "все десять легендарок, выпавшие исключительно на тирах 8-10, дают отдельный суровый вариант титула."
+  },
+  {
+    "id": "escalation_hand_1055",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "победа засчитывается первому достигшему условия, но книга фиксирует вклад всех участников."
+  },
+  {
+    "id": "escalation_hand_1056",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пройденный необязательный финальный тест даёт не бонус, а уникальную реплику в книге."
+  },
+  {
+    "id": "escalation_hand_1057",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "сочетание Честного Пути и Идеального Равновесия даёт уникальный, ни с чем не пересекающийся статус."
+  },
+  {
+    "id": "escalation_hand_1058",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "накопление 20+ уникальных глав в финальной книге увеличивает физическую \"толщину\" предмета в инвентаре."
+  },
+  {
+    "id": "escalation_hand_1059",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "на грани гарантированной победы появляется редчайшее сообщение, написанное как бы от лица самого мира."
+  },
+  {
+    "id": "escalation_hand_1060",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "при максимальном истощении карты последняя минута перед победой сопровождается особым затемнением неба."
+  },
+  {
+    "id": "escalation_hand_1061",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "использование \"Новой Эскалации\" перед этой победой отдельно отмечается в финальном титуле."
+  },
+  {
+    "id": "escalation_hand_1062",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "повторная победа в этом же мире ссылается на предыдущую как продолжение единой истории."
+  },
+  {
+    "id": "escalation_hand_1063",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальный союзный NPC-соперник получает собственную главу в книге, написанную как бы от его лица."
+  },
+  {
+    "id": "escalation_hand_1064",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "теоретическое выпадение абсолютно всех усложнений пула за одну сессию даёт уникальное скрытое сообщение."
+  },
+  {
+    "id": "escalation_hand_1065",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "Совет Хранителей без всех участников всё равно даёт совет, но честно указывает, каких голосов не хватает."
+  },
+  {
+    "id": "escalation_hand_1066",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "настигший игрока финальный антагонист предлагает необязательную последнюю дуэль с уникальной наградой."
+  },
+  {
+    "id": "escalation_hand_1067",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "девять уже полученных легендарок визуально сопровождают игрока тенями в последний час перед финалом."
+  },
+  {
+    "id": "escalation_hand_1068",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "собранный Портрет Игрока становится отдельной главой финальной книги."
+  },
+  {
+    "id": "escalation_hand_1069",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "система \"взвешивает\" всю статистику и формирует уникальную, а не шаблонную формулировку титула."
+  },
+  {
+    "id": "escalation_hand_1070",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "за секунду до регистрации десятой легендарки время визуально замедляется на долю секунды."
+  },
+  {
+    "id": "escalation_hand_1071",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "ранее полученное финальное пророчество явно \"сбывается\" отдельным сообщением в момент победы."
+  },
+  {
+    "id": "escalation_hand_1072",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полный незеритовый сет с максимальными зачарованиями на момент победы даёт отдельную пометку титула."
+  },
+  {
+    "id": "escalation_hand_1073",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "десятая легендарка, заставшая игрока без брони и оружия, даёт редкий и уважаемый вариант титула."
+  },
+  {
+    "id": "escalation_hand_1074",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "десятая легендарка получает единственную за игру анимацию появления, отличную от всех предыдущих."
+  },
+  {
+    "id": "escalation_hand_1075",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "книга, дополненная всеми главами, становится уникальным памятным предметом именно этой сессии."
+  },
+  {
+    "id": "escalation_hand_1076",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "встреча усложнений из всех источников пула хотя бы по разу даёт отдельный финальный титул."
+  },
+  {
+    "id": "escalation_hand_1077",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "анимация десятой легендарки содержит едва заметный флешбек к самому первому усложнению сессии."
+  },
+  {
+    "id": "escalation_hand_1078",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "краткая синхронизация всех визуальных эффектов активных усложнений перед появлением финального экрана."
+  },
+  {
+    "id": "escalation_hand_1079",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальное сообщение системы содержит деталь, основанную на самом частом типе встреченных усложнений."
+  },
+  {
+    "id": "escalation_hand_1080",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "одновременное выполнение трёх и более редких финальных условий даёт самый редкий статус мода."
+  },
+  {
+    "id": "escalation_hand_1081",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "endless-режим открывает новый, более редкий уровень редкости сверх Legendary, с собственной формулой эскалации."
+  },
+  {
+    "id": "escalation_hand_1082",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "новая редкость доступна только в endless-режиме с шансом около 0.1% даже на максимальном тире."
+  },
+  {
+    "id": "escalation_hand_1083",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "достаточно долгая endless-игра открывает новый, ранее недоступный визуальный стиль неба."
+  },
+  {
+    "id": "escalation_hand_1084",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "в endless-режиме часть настроек конфига становится доступна для изменения прямо во время игры."
+  },
+  {
+    "id": "escalation_hand_1085",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "усложнения этой редкости по умолчанию не имеют вообще никакого клэмпа."
+  },
+  {
+    "id": "escalation_hand_1086",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "очень долгий endless дружелюбно признаёт, что дальше игра держится на редкости и комбинаторике, а не заранее написанных идеях."
+  },
+  {
+    "id": "escalation_hand_1087",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "испытание абсолютно всех механик техспеки за одну сессию даёт редчайший скрытый статус."
+  },
+  {
+    "id": "escalation_hand_1088",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальная книга максимальной длины становится предметом сравнения между игроками в мультиплеере."
+  },
+  {
+    "id": "escalation_hand_1089",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "накопление всех титулов без демонстрации их публично отмечается уважительной, спокойной пометкой."
+  },
+  {
+    "id": "escalation_hand_1090",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "выход из игры сразу после победы без единого лишнего действия даёт редчайший, едва уловимый финал."
+  },
+  {
+    "id": "escalation_hand_1091",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пребывание в мире 5+ часов после победы без выбора между endless и выходом отмечается тёплой деталью."
+  },
+  {
+    "id": "escalation_hand_1092",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "мир, где использованы все усложнения пула за несколько циклов \"Новой Эскалации\", получает особый статус в метаданных."
+  },
+  {
+    "id": "escalation_hand_1093",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "endless-режим принципиально не имеет запланированного финала — тема мода в буквальном смысле не заканчивается сама."
+  },
+  {
+    "id": "escalation_hand_1094",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальная книга всегда заканчивается одной и той же неизменной фразой, вне зависимости от объёма глав."
+  },
+  {
+    "id": "escalation_hand_1095",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "само достижение отметки 1000+ записей в пуле разблокирует скрытый декоративный значок в интерфейсе."
+  },
+  {
+    "id": "escalation_hand_1096",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "теоретическая Legendary остаётся возможной даже на самом безобидном усложнении тира 1 до самого конца."
+  },
+  {
+    "id": "escalation_hand_1097",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "весь объединённый пул в едином файле становится референсным документом для дальнейшей разработки мода."
+  },
+  {
+    "id": "escalation_hand_1098",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "базовые технические правила стекинга и клэмпа действуют одинаково для любой записи пула, от первой до последней."
+  },
+  {
+    "id": "escalation_hand_1099",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "даже при тысяче с лишним возможных источников журнал остаётся сгруппированным по уникальным id."
+  },
+  {
+    "id": "escalation_hand_1100",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "колоссальный объём пула гарантирует, что увидеть буквально всё хотя бы раз почти невозможно — что тематически уместно."
+  },
+  {
+    "id": "escalation_hand_1101",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "где-то в объёме пула специально спрятана как минимум одна нарочито абсурдная запись для внимательных игроков."
+  },
+  {
+    "id": "escalation_hand_1102",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "несмотря на масштаб, каждая запись пула укладывается в одну и ту же простую структуру без исключений."
+  },
+  {
+    "id": "escalation_hand_1103",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "эта запись — предпоследняя в блоке 3, и она сознательно смотрит в сторону оставшихся до 1200+ записей."
+  },
+  {
+    "id": "escalation_hand_1104",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "последняя запись блока тихо перекликается с самой первой (скрипучий пол) — от едва заметного скрипа до гула тысячи механик."
+  },
+  {
+    "id": "escalation_hand_1105",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "игра ссылается на пул целиком, а не на то, сколько записей пришлось на конкретный блок."
+  },
+  {
+    "id": "escalation_hand_1106",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "объединённый в JSON пул уже пригоден для мода независимо от дальнейших дополнений."
+  },
+  {
+    "id": "escalation_hand_1107",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "тир 10, как и всегда, подходит и для кульминации, и для передышки перед следующим шагом."
+  },
+  {
+    "id": "escalation_hand_1108",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "последняя запись блока фиксирует простой факт: от идеи №1 до идеи №1108 не встретилось ни одного повторения."
+  },
+  {
+    "id": "escalation_hand_1109",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "резной книжный шкаф с малым шансом на секунду путает редстоун-сигнал при быстрой перестановке книг."
+  },
+  {
+    "id": "escalation_hand_1110",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "подвесные таблички слегка раскачиваются и скрипят у открытых проёмов на ветру."
+  },
+  {
+    "id": "escalation_hand_1111",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "torchflower_sprout_time_no_sunlight",
+    "base_value": 15,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_1112",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "pitcher plant \"складывается\" при резком приближении, временно теряя декоративный вид."
+  },
+  {
+    "id": "escalation_hand_1113",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "раскопка кистью подозрительного песка/гравия с малым шансом требует лишнего взмаха."
+  },
+  {
+    "id": "escalation_hand_1114",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "плот на воде слегка качается сильнее лодки при встречном течении."
+  },
+  {
+    "id": "escalation_hand_1115",
+    "stacking_class": "direct_multiplier_uncapped",
+    "affected_stat": "sniffer_egg_incubation_time_no_sun",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_1116",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "наблюдатель, встроенный в декоративную кладку, реагирует с небольшой задержкой на изменения."
+  },
+  {
+    "id": "escalation_hand_1117",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "фонарь на цепи у входа в шахту слабо поскрипывает, выдавая направление входа издалека."
+  },
+  {
+    "id": "escalation_hand_1118",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "новая карта исследователя с малым шансом рвётся при первом разворачивании в дождь."
+  },
+  {
+    "id": "escalation_hand_1119",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "стрелка компаса на движущейся лодке колеблется заметнее, чем на суше."
+  },
+  {
+    "id": "escalation_hand_1120",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уличное освещение в деревне зажигается на пару секунд позже обычного в сумерках."
+  },
+  {
+    "id": "escalation_hand_1121",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "деревянные трапы затонувших кораблей скользкие вдвойне при попытке быстрого подъёма."
+  },
+  {
+    "id": "escalation_hand_1122",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "снегопад в горных биомах временно снижает шанс успешного разведения коз."
+  },
+  {
+    "id": "escalation_hand_1123",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "деревенский колокол дальше 100 блоков звучит с ощутимой задержкой звука."
+  },
+  {
+    "id": "escalation_hand_1124",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пчеловодство в деревне не даёт бонусов репутации, доступных выделенным ремёслам."
+  },
+  {
+    "id": "escalation_hand_1125",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "редкая посуда с определённым набором черепков при разрушении звучит громче, привлекая мобов."
+  },
+  {
+    "id": "escalation_hand_1126",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "виноградные лозы у подземных водопадов особенно скользкие для лазания."
+  },
+  {
+    "id": "escalation_hand_1127",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "костры на открытом воздухе в грозу гаснут заметно быстрее обычного дождя."
+  },
+  {
+    "id": "escalation_hand_1128",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пепловые частицы Нижнего мира сильнее дыма ухудшают чёткость дальнего зрения."
+  },
+  {
+    "id": "escalation_hand_1129",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "археологические находки в одной локации со временем не восстанавливаются."
+  },
+  {
+    "id": "escalation_hand_1130",
+    "stacking_class": "percent_stat_clamped",
+    "affected_stat": "goat_ram_strength_after_50_uses",
+    "base_value": 10,
+    "unit": "percent",
+    "value_source": "explicit",
+    "notes": ""
+  },
+  {
+    "id": "escalation_hand_1131",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "жители-фермеры не предлагают семена торчфлауэра и кувшинника в обычном ассортименте."
+  },
+  {
+    "id": "escalation_hand_1132",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "грязевые блоки под мангровыми корнями с малым шансом обрушиваются при добыче рядом."
+  },
+  {
+    "id": "escalation_hand_1133",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "два взрослых снифера в одном загоне реже одновременно нюхают семена."
+  },
+  {
+    "id": "escalation_hand_1134",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "пепел базальтовых дельт оставляет след, слегка выдающий маршрут игрока."
+  },
+  {
+    "id": "escalation_hand_1135",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "библиотекарь реже обновляет ассортимент книг при 3+ библиотекарях в деревне."
+  },
+  {
+    "id": "escalation_hand_1136",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "крупная декоративная кладка (500+ блоков) со временем визуально выцветает без ухода."
+  },
+  {
+    "id": "escalation_hand_1137",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "подозрительный гравий под водой раскапывается заметно дольше, чем на суше."
+  },
+  {
+    "id": "escalation_hand_1138",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "несколько коз в одном загоне периодически бодаются, повреждая забор."
+  },
+  {
+    "id": "escalation_hand_1139",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "восстановление выцветшей кладки требует больше ресурсов, чем исходная постройка."
+  },
+  {
+    "id": "escalation_hand_1140",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "3+ библиотекаря в одной деревне со временем снижают общий бонус профессии за счёт \"спора\"."
+  },
+  {
+    "id": "escalation_hand_1141",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полностью раскопанная структура не восстанавливает находки даже спустя очень долгое время."
+  },
+  {
+    "id": "escalation_hand_1142",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "конкуренция снифферов снижает общую вероятность найти новые уникальные семена на карте."
+  },
+  {
+    "id": "escalation_hand_1143",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "интенсивная вырубка мангров необратимо снижает плотность будущего прорастания там."
+  },
+  {
+    "id": "escalation_hand_1144",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "очень крупные декоративные постройки требуют регулярного обслуживания, иначе часть блоков перестаёт учитываться."
+  },
+  {
+    "id": "escalation_hand_1145",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "деревни без выделенного смотрителя за освещением зажигают фонари медленнее."
+  },
+  {
+    "id": "escalation_hand_1146",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "бодание коз со временем полностью ломает недостаточно прочные заборы."
+  },
+  {
+    "id": "escalation_hand_1147",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "интенсивное хождение по пепловым дельтам делает поверхность плотнее, но менее заметной."
+  },
+  {
+    "id": "escalation_hand_1148",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "яйца снифера без источника тепла рядом не вылупляются вообще, сколько бы времени ни прошло."
+  },
+  {
+    "id": "escalation_hand_1149",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "необслуживаемые мангровые заросли со временем теряют способность к дальнейшему распространению."
+  },
+  {
+    "id": "escalation_hand_1150",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "неразрешённый конфликт библиотекарей со временем снижает репутацию всей деревни."
+  },
+  {
+    "id": "escalation_hand_1151",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полная раскопка всех структур карты снижает шанс генерации подозрительных блоков в новых."
+  },
+  {
+    "id": "escalation_hand_1152",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "коза, использованная как таран 200+ раз, отказывается таранить дальше без долгого отдыха."
+  },
+  {
+    "id": "escalation_hand_1153",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "очень старая кладка со временем самостоятельно \"прорастает\" мхом без разрешения игрока."
+  },
+  {
+    "id": "escalation_hand_1154",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "если все уникальные виды семян уже найдены, снифферы перестают что-либо нюхать вообще."
+  },
+  {
+    "id": "escalation_hand_1155",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полностью утрамбованные дельты становятся непригодны для установки блоков нилиума."
+  },
+  {
+    "id": "escalation_hand_1156",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "заброшенная на 200+ часов постройка необратимо переходит в статус \"руины\"."
+  },
+  {
+    "id": "escalation_hand_1157",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "неконфликтующая библиотека с 3+ библиотекарями становится источником уникальных редких книг."
+  },
+  {
+    "id": "escalation_hand_1158",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "если новых видов больше нет, появляется редкий финальный вид семени, доступный только через снифферов."
+  },
+  {
+    "id": "escalation_hand_1159",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "заброшенные постройки в статусе \"руины\" спавнят редкого стража, защищающего оставшееся."
+  },
+  {
+    "id": "escalation_hand_1160",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "единственная неконфликтующая библиотека карты становится целью похищения книг иллагерами."
+  },
+  {
+    "id": "escalation_hand_1161",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальное уникальное семя при посадке даёт растение с не встречающимися больше нигде свойствами."
+  },
+  {
+    "id": "escalation_hand_1162",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "непригодные для нилиума дельты формируют уникальный \"мёртвый\" суб-биом Нижнего мира."
+  },
+  {
+    "id": "escalation_hand_1163",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "коза, которой долго не давали отдохнуть, может однажды протаранить самого игрока."
+  },
+  {
+    "id": "escalation_hand_1164",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "истощённый мангровый район превращается в засоленную, непригодную для растений почву."
+  },
+  {
+    "id": "escalation_hand_1165",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "побеждённый Дух Мозаики оставляет уникальный декоративный трофей."
+  },
+  {
+    "id": "escalation_hand_1166",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "успешно украденные иллагерами книги появляются как редкий лут в их структурах."
+  },
+  {
+    "id": "escalation_hand_1167",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "размноженное растение из финального семени становится частью постоянного декоративного набора игрока."
+  },
+  {
+    "id": "escalation_hand_1168",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "засоленная почва требует специальной обработки для повторного использования под посадки."
+  },
+  {
+    "id": "escalation_hand_1169",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "эволюционировавший страж руин восстанавливает окружающие постройки, мешая финальной зачистке."
+  },
+  {
+    "id": "escalation_hand_1170",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "иллагеры, похитившие 10+ книг, формируют банду с усиленным вооружением."
+  },
+  {
+    "id": "escalation_hand_1171",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "коллекция из 5+ уникальных декоративных растений активирует \"Ботанический Феномен\" — территорию ускоренного роста."
+  },
+  {
+    "id": "escalation_hand_1172",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "коза-бунтарка собирает вокруг себя других коз в небольшое агрессивное стадо."
+  },
+  {
+    "id": "escalation_hand_1173",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "несколько бывших мангровых садов формируют вторичный суб-биом, непригодный для земледелия."
+  },
+  {
+    "id": "escalation_hand_1174",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полная раскопка всех структур карты даёт редкое сообщение о \"конце эпохи открытий\"."
+  },
+  {
+    "id": "escalation_hand_1175",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "территория ускоренного роста привлекает уникальных пчёл редкой расцветки."
+  },
+  {
+    "id": "escalation_hand_1176",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "усмирённая коза-бунтарка больше никогда не может использоваться как таран — только декоративно."
+  },
+  {
+    "id": "escalation_hand_1177",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "разгромленная банда иллагеров возвращает все похищенные книги в оригинальную библиотеку."
+  },
+  {
+    "id": "escalation_hand_1178",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "долго поддерживаемый Ботанический Феномен даёт финальный уникальный декоративный гибрид растения."
+  },
+  {
+    "id": "escalation_hand_1179",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "побеждённый Хранитель Мозаики эволюционирует в версию, атакующую и постройки игрока по соседству."
+  },
+  {
+    "id": "escalation_hand_1180",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "неразгромленная банда основывает укреплённый лагерь с уникальным лутом."
+  },
+  {
+    "id": "escalation_hand_1181",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "территория флоры, доведённая до предела, становится \"Садом Эскалации\" с уникальным освещением."
+  },
+  {
+    "id": "escalation_hand_1182",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "неостановленное стадо агрессивных коз требует отдельной зачистки как небольшое событие."
+  },
+  {
+    "id": "escalation_hand_1183",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "обширный суб-биом засоленной земли получает уникальных, редких вредителей."
+  },
+  {
+    "id": "escalation_hand_1184",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "библиотека, вернувшая все книги, становится \"Великой Библиотекой\" — редчайшим источником знаний."
+  },
+  {
+    "id": "escalation_hand_1185",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "финальный гибрид растения при созревании даёт единственный за игру декоративный блок."
+  },
+  {
+    "id": "escalation_hand_1186",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "статус \"конец эпохи открытий\" даёт постоянный титул \"Последний Археолог Этого Мира\"."
+  },
+  {
+    "id": "escalation_hand_1187",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "побеждённый Император Мозаики меняет облик всех построек игрока на уникальный \"благословлённый\" стиль."
+  },
+  {
+    "id": "escalation_hand_1188",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "прохождение декоративно-археологической цепочки даёт отдельное признание, отличное от боевых линий блока 3."
+  },
+  {
+    "id": "escalation_hand_1189",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полное прохождение археологической линии фиксируется как отдельный, не боевой нарративный путь."
+  },
+  {
+    "id": "escalation_hand_1190",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "уникальный \"благословлённый\" стиль построек становится частью финального Портрета Игрока."
+  },
+  {
+    "id": "escalation_hand_1191",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "полное игнорирование археологии всю игру честно отмечается как равноценный стиль прохождения."
+  },
+  {
+    "id": "escalation_hand_1192",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "утерянный единственный экземпляр финального гибрида не может быть восстановлен в этом мире никак."
+  },
+  {
+    "id": "escalation_hand_1193",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "нетронутая до финала Великая Библиотека получает отдельное упоминание в финальной книге."
+  },
+  {
+    "id": "escalation_hand_1194",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "титул \"Последний Археолог\" в сочетании с другими финальными титулами даёт редкую комбинированную формулировку."
+  },
+  {
+    "id": "escalation_hand_1195",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "недоведённый до полного развития Феномен честно фиксируется как \"неоконченная глава\"."
+  },
+  {
+    "id": "escalation_hand_1196",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "одновременно активные Великая Библиотека, Сад Эскалации и усмирённое стадо дают отдельный мирный вариант финала."
+  },
+  {
+    "id": "escalation_hand_1197",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "сочетание боевого и декоративного путей даёт максимально полный финальный профиль."
+  },
+  {
+    "id": "escalation_hand_1198",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "прикосновение хотя бы раз ко всем тематическим линиям мода даёт редчайшее признание разнообразия."
+  },
+  {
+    "id": "escalation_hand_1199",
+    "stacking_class": "behavioral",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "существующий на момент победы Абсолютный Феномен получает постоянное, никогда не увядающее состояние."
+  },
+  {
+    "id": "escalation_hand_1200",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "ровно на этом пункте пул усложнений документа пересекает заявленную отметку в 1200+."
+  },
+  {
+    "id": "escalation_hand_1201",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "путь от первой идеи до этой записи не потребовал ни единого повторения смысла."
+  },
+  {
+    "id": "escalation_hand_1202",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "весь объединённый пул представляет собой одну непрерывную, согласованную систему усложнений."
+  },
+  {
+    "id": "escalation_hand_1203",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "эта запись тихо благодарит игрока за то, что дошёл до конца записанного пути."
+  },
+  {
+    "id": "escalation_hand_1204",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "весь заранее прописанный путь пройден — дальше либо победа, либо endless, либо Новая Эскалация с чистого листа."
+  },
+  {
+    "id": "escalation_hand_1205",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "завершённость пула становится частью лора мода — редкое сообщение, которое видит не каждый игрок."
+  },
+  {
+    "id": "escalation_hand_1206",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "легенда мода гласит, что где-то спрятана незаметная отсылка к самому первому усложнению пула."
+  },
+  {
+    "id": "escalation_hand_1207",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "итог превышает 1200 не ровно, а с запасом — символ того, что эскалация всегда даёт чуть больше, чем от неё ждут."
+  },
+  {
+    "id": "escalation_hand_1208",
+    "stacking_class": "flavor",
+    "affected_stat": null,
+    "base_value": null,
+    "unit": null,
+    "value_source": null,
+    "notes": "этой записью официально закрывается основной пул усложнений — дальше начинается только сама игра."
   }
 ]
