@@ -1,5 +1,7 @@
 package com.dxrk.escalationmod.runtime;
 
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.pool.EscalationDefinition;
 import net.minecraft.nbt.CompoundTag;
 
@@ -27,9 +29,10 @@ public class EscalationInstance {
         this.stackMode = definition.stackMode;
 
         if (rarity == Rarity.LEGENDARY) {
+            EscalationConfig.LegendaryEscalationSection esc = EscalationConfigManager.get().rarity.legendaryEscalation;
             this.escalationActive = true;
-            this.escalationPerSecond = 0.2;
-            this.escalationDurationSec = 30;
+            this.escalationPerSecond = esc.perSecond;
+            this.escalationDurationSec = esc.durationSec;
         } else {
             this.escalationActive = false;
             this.escalationPerSecond = 0.0;

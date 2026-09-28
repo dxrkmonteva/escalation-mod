@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod;
 
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.network.EscalationNetwork;
 import com.dxrk.escalationmod.pool.PoolRegistry;
 import com.dxrk.escalationmod.runtime.RuntimeSmokeTest;
@@ -25,6 +26,7 @@ public class Escalation {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        EscalationConfigManager.init();
         LOGGER.info("Escalation mod: commonSetup — загружаю пул усложнений...");
         PoolRegistry.init();
         ValueRegistry.init();

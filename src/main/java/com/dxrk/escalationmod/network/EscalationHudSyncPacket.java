@@ -12,27 +12,33 @@ import java.util.function.Supplier;
 
 public class EscalationHudSyncPacket {
 
+    /** 0 — обычный режим; 1 — победа, новые усложнения остановлены; 2 — endless. */
+    public static final int RUN_NORMAL = 0;
+    public static final int RUN_WON_STOPPED = 1;
+    public static final int RUN_ENDLESS = 2;
+
     public final boolean netherUnlocked;
     public final long netherRemainingTicks;
     public final String endStatus;
     public final boolean mercyPauseActive;
     public final long mercyPauseRemainingTicks;
     public final long nextSpawnRemainingTicks;
+    public final int runState;
     public final List<JournalRow> journalRows;
 
     public EscalationHudSyncPacket(boolean netherUnlocked, long netherRemainingTicks, String endStatus,
                                     boolean mercyPauseActive, long mercyPauseRemainingTicks,
-                                    long nextSpawnRemainingTicks, List<JournalRow> journalRows) {
+                                    long nextSpawnRemainingTicks, int runState, List<JournalRow> journalRows) {
         this.netherUnlocked = netherUnlocked;
         this.netherRemainingTicks = netherRemainingTicks;
         this.endStatus = endStatus;
         this.mercyPauseActive = mercyPauseActive;
         this.mercyPauseRemainingTicks = mercyPauseRemainingTicks;
         this.nextSpawnRemainingTicks = nextSpawnRemainingTicks;
+        this.runState = runState;
         this.journalRows = journalRows;
     }
 
-    /** Разбивка по редкости прямо в снимке — тир резолвится на клиенте через PoolRegistry, не шлём. */
     public static class JournalRow {
         public final String poolId;
         public final long firstSeenTick;
@@ -62,6 +68,7 @@ public class EscalationHudSyncPacket {
         buf.writeBoolean(msg.mercyPauseActive);
         buf.writeVarLong(msg.mercyPauseRemainingTicks);
         buf.writeVarLong(msg.nextSpawnRemainingTicks);
+        buf.writeVarInt(msg.runState);
 
         buf.writeVarInt(msg.journalRows.size());
         for (JournalRow row : msg.journalRows) {
@@ -81,6 +88,7 @@ public class EscalationHudSyncPacket {
         boolean mercyPauseActive = buf.readBoolean();
         long mercyPauseRemainingTicks = buf.readVarLong();
         long nextSpawnRemainingTicks = buf.readVarLong();
+        int runState = buf.readVarInt();
 
         int size = buf.readVarInt();
         List<JournalRow> rows = new ArrayList<>(size);
@@ -95,7 +103,7 @@ public class EscalationHudSyncPacket {
         }
 
         return new EscalationHudSyncPacket(netherUnlocked, netherRemainingTicks, endStatus,
-                mercyPauseActive, mercyPauseRemainingTicks, nextSpawnRemainingTicks, rows);
+                mercyPauseActive, mercyPauseRemainingTicks, nextSpawnRemainingTicks, runState, rows);
     }
 
     public static void handle(EscalationHudSyncPacket msg, Supplier<NetworkEvent.Context> ctxSupplier) {

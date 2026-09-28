@@ -1,6 +1,7 @@
 package com.dxrk.escalationmod.mercy;
 
 import com.dxrk.escalationmod.Escalation;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.data.EscalationCapabilities;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -19,7 +20,8 @@ public class MercyRuleEvents {
         player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data -> {
             data.incrementDeathCounter();
 
-            if (data.getDeathCounter() % 5 == 0) {
+            int every = EscalationConfigManager.get().mercyRule.deathsToTrigger;
+            if (data.getDeathCounter() % every == 0) {
                 long currentTick = player.level().getGameTime();
                 MercyRuleManager.onDeathBlockOfFive(player, data, currentTick);
             }

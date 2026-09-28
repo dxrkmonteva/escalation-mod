@@ -1,5 +1,7 @@
 package com.dxrk.escalationmod.mercy;
 
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
 import com.dxrk.escalationmod.runtime.EscalationInstance;
 import net.minecraft.network.chat.Component;
@@ -17,11 +19,13 @@ public class MercyRuleManager {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final SecureRandom RNG = new SecureRandom();
 
-    private static final long PAUSE_DURATION_TICKS = 30L * 60 * 20;
-    private static final long IGNORE_IF_REMAINING_ABOVE_TICKS = 10L * 60 * 20;
-    private static final double EXTEND_PERCENT = 0.25;
-    private static final double REMOVAL_PERCENT_MIN = 0.40;
-    private static final double REMOVAL_PERCENT_MAX = 0.50;
+    private static EscalationConfig.MercyRuleSection cfg() {
+        return EscalationConfigManager.get().mercyRule;
+    }
+
+    private static long pauseDurationTicks() {
+        return (long) (cfg().pauseDurationMin * 60.0 * 20.0);
+    }
 
     public static void onDeathBlockOfFive(ServerPlayer player, IEscalationPlayerData data, long currentTick) {
         boolean currentlyPaused = currentTick < data.getMercyPauseEndTick();
@@ -32,37 +36,37 @@ public class MercyRuleManager {
         }
 
         long remaining = data.getMercyPauseEndTick() - currentTick;
-        if (remaining > IGNORE_IF_REMAINING_ABOVE_TICKS) {
-            LOGGER.info("Escalation Mercy Rule: у {} новый триггер проигнорирован — осталось {} тиков (> 10 мин)",
-                    player.getName().getString(), remaining);
+        long ignoreAboveTicks = (long) (cfg().ignoreIfRemainingMinAbove * 60.0 * 20.0);
+        if (remaining > ignoreAboveTicks) {
+            LOGGER.info("Escalation Mercy Rule: у {} новый триггер проигнорирован — осталось {} тиков (> порога {})",
+                    player.getName().getString(), remaining, ignoreAboveTicks);
             player.sendSystemMessage(Component.literal(
-                    "§7🛡 Передышка уже активна, до конца больше 10 минут — новый триггер проигнорирован."));
+                    "§7🛡 Передышка уже активна, до конца больше "
+                            + trimNumber(cfg().ignoreIfRemainingMinAbove) + " минут — новый триггер проигнорирован."));
             return;
         }
 
-        long extended = (long) (remaining * (1.0 + EXTEND_PERCENT));
+        long extended = (long) (remaining * (1.0 + cfg().extendPercentIfBelowOrEqual / 100.0));
         data.setMercyPauseEndTick(currentTick + extended);
 
-        LOGGER.info("Escalation Mercy Rule: у {} пауза продлена — было {} тиков, стало {} тиков (+25%)",
-                player.getName().getString(), remaining, extended);
+        LOGGER.info("Escalation Mercy Rule: у {} пауза продлена — было {} тиков, стало {} тиков (+{}%)",
+                player.getName().getString(), remaining, extended, trimNumber(cfg().extendPercentIfBelowOrEqual));
 
         performRemoval(player, data, true);
     }
 
     private static void startNewPause(ServerPlayer player, IEscalationPlayerData data, long currentTick) {
-        data.setMercyPauseEndTick(currentTick + PAUSE_DURATION_TICKS);
+        data.setMercyPauseEndTick(currentTick + pauseDurationTicks());
 
-        LOGGER.info("Escalation Mercy Rule: у {} началась передышка на 30 минут (5-я смерть цикла)",
-                player.getName().getString());
+        LOGGER.info("Escalation Mercy Rule: у {} началась передышка на {} мин ({}-я смерть цикла)",
+                player.getName().getString(), trimNumber(cfg().pauseDurationMin), cfg().deathsToTrigger);
 
         performRemoval(player, data, false);
     }
 
     /**
      * Раздел 9: единица удаления — уникальный id целиком, процент считается от
-     * количества уникальных активных id (не от сырого числа инстансов), выбор — FIFO
-     * по времени первого появления id. Снятые id никак специально "не возвращаются
-     * в пул" — они и так не отфильтрованы от повторного выпадения (см. seenPoolIds).
+     * количества уникальных активных id, выбор — FIFO по времени первого появления id.
      */
     private static void performRemoval(ServerPlayer player, IEscalationPlayerData data, boolean isExtend) {
         List<EscalationInstance> active = data.getActiveInstances();
@@ -81,7 +85,9 @@ public class MercyRuleManager {
             return;
         }
 
-        double percent = REMOVAL_PERCENT_MIN + RNG.nextDouble() * (REMOVAL_PERCENT_MAX - REMOVAL_PERCENT_MIN);
+        double minP = cfg().removalPercentMin / 100.0;
+        double maxP = cfg().removalPercentMax / 100.0;
+        double percent = minP + RNG.nextDouble() * (maxP - minP);
         int removeGroupCount = Math.min(totalUniqueIds, (int) Math.round(totalUniqueIds * percent));
 
         List<Map.Entry<String, List<EscalationInstance>>> sortedGroups = new ArrayList<>(grouped.entrySet());
@@ -115,5 +121,9 @@ public class MercyRuleManager {
 
     private static long firstSeen(List<EscalationInstance> instances) {
         return instances.stream().mapToLong(i -> i.spawnedAtTick).min().orElse(0L);
+    }
+
+    private static String trimNumber(double v) {
+        return v == Math.floor(v) ? String.valueOf((long) v) : String.valueOf(v);
     }
 }

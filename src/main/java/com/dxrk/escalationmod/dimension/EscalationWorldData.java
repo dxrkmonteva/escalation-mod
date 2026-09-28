@@ -1,5 +1,7 @@
 package com.dxrk.escalationmod.dimension;
 
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.SavedData;
@@ -13,8 +15,10 @@ public class EscalationWorldData extends SavedData {
 
     private double endRealHoursThreshold;
 
+    /** Вызывается один раз при создании мира — диапазон берётся из конфига (dimensionLock.endRealHoursMin/Max). */
     public EscalationWorldData() {
-        this.endRealHoursThreshold = 50.0 + RNG.nextDouble() * 50.0;
+        EscalationConfig.DimensionLockSection dl = EscalationConfigManager.get().dimensionLock;
+        this.endRealHoursThreshold = dl.endRealHoursMin + RNG.nextDouble() * (dl.endRealHoursMax - dl.endRealHoursMin);
     }
 
     public double getEndRealHoursThreshold() {

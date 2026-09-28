@@ -1,18 +1,22 @@
 package com.dxrk.escalationmod.runtime;
 
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
+
 public enum Rarity {
-    COMMON(1.0),
-    RARE(1.5),
-    EPIC(2.5),
-    LEGENDARY(4.0);
+    COMMON,
+    RARE,
+    EPIC,
+    LEGENDARY;
 
-    private final double baseMultiplier;
-
-    Rarity(double baseMultiplier) {
-        this.baseMultiplier = baseMultiplier;
-    }
-
+    /** Множители редкости из конфига (rarity.multipliers). */
     public double getBaseMultiplier() {
-        return baseMultiplier;
+        EscalationConfig.MultipliersSection m = EscalationConfigManager.get().rarity.multipliers;
+        return switch (this) {
+            case COMMON -> m.common;
+            case RARE -> m.rare;
+            case EPIC -> m.epic;
+            case LEGENDARY -> m.legendary;
+        };
     }
 }

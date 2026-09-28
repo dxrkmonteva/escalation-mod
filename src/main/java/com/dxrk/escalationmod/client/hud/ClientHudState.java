@@ -17,6 +17,7 @@ public final class ClientHudState {
     private volatile boolean mercyPauseActive = false;
     private volatile long mercyPauseRemainingTicks = 0L;
     private volatile long nextSpawnRemainingTicks = 0L;
+    private volatile int runState = EscalationHudSyncPacket.RUN_NORMAL;
     private volatile List<JournalDisplayRow> journalRows = new ArrayList<>();
     private volatile boolean hasData = false;
 
@@ -30,6 +31,7 @@ public final class ClientHudState {
         this.mercyPauseActive = packet.mercyPauseActive;
         this.mercyPauseRemainingTicks = packet.mercyPauseRemainingTicks;
         this.nextSpawnRemainingTicks = packet.nextSpawnRemainingTicks;
+        this.runState = packet.runState;
 
         List<JournalDisplayRow> resolved = new ArrayList<>(packet.journalRows.size());
         for (EscalationHudSyncPacket.JournalRow row : packet.journalRows) {
@@ -51,6 +53,7 @@ public final class ClientHudState {
     public boolean isMercyPauseActive() { return mercyPauseActive; }
     public long getMercyPauseRemainingTicks() { return mercyPauseRemainingTicks; }
     public long getNextSpawnRemainingTicks() { return nextSpawnRemainingTicks; }
+    public int getRunState() { return runState; }
     public List<JournalDisplayRow> getJournalRows() { return journalRows; }
 
     public static class JournalDisplayRow {

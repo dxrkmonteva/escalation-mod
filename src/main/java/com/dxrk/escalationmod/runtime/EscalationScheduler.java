@@ -1,6 +1,8 @@
 package com.dxrk.escalationmod.runtime;
 
 import com.dxrk.escalationmod.Escalation;
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.data.EscalationCapabilities;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
 import com.dxrk.escalationmod.network.EscalationNetwork;
@@ -22,6 +24,7 @@ import com.mojang.logging.LogUtils;
 
 import java.security.SecureRandom;
 import java.util.List;
+import java.util.Locale;
 
 @Mod.EventBusSubscriber(modid = Escalation.MODID)
 public class EscalationScheduler {
@@ -29,12 +32,23 @@ public class EscalationScheduler {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final SecureRandom RNG = new SecureRandom();
 
-    private static final double TOTAL_TARGET_HOURS = 80.0;
-    private static final TierSelector.Order ORDER = TierSelector.Order.ASCENDING;
-    private static final int JITTER = 2;
+    private static EscalationConfig cfg() {
+        return EscalationConfigManager.get();
+    }
 
-    private static final long INTERVAL_MIN_TICKS = 60L * 20;
-    private static final long INTERVAL_MAX_TICKS = 600L * 20;
+    private static TierSelector.Order tierOrder() {
+        try {
+            return TierSelector.Order.valueOf(cfg().tierProgression.order.trim().toUpperCase(Locale.ROOT));
+        } catch (IllegalArgumentException e) {
+            return TierSelector.Order.ASCENDING;
+        }
+    }
+
+    private static int selectTierFor(IEscalationPlayerData data) {
+        double elapsedHours = data.getRealPlaytimeTicks() / 20.0 / 3600.0;
+        EscalationConfig.TierProgressionSection tp = cfg().tierProgression;
+        return TierSelector.selectTier(elapsedHours, tp.totalTargetHours, tierOrder(), tp.jitter);
+    }
 
     @SubscribeEvent
     public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
@@ -65,7 +79,7 @@ public class EscalationScheduler {
                 if (currentTick < data.getNextSpawnAtTick()) {
                     return;
                 }
-                if (data.hasWon() && !data.isEndlessMode()) {
+                if (data.hasWon() && !data.isEndlessMode() && cfg().winCondition.stopNewSpawnsAfterWin) {
                     return;
                 }
                 if (currentTick < data.getMercyPauseEndTick()) {
@@ -78,8 +92,7 @@ public class EscalationScheduler {
     }
 
     private static void trySpawn(ServerPlayer player, IEscalationPlayerData data, long currentTick) {
-        double elapsedHours = data.getRealPlaytimeTicks() / 20.0 / 3600.0;
-        int tier = TierSelector.selectTier(elapsedHours, TOTAL_TARGET_HOURS, ORDER, JITTER);
+        int tier = selectTierFor(data);
 
         EscalationDefinition definition = pickDefinition(tier);
         if (definition == null) {
@@ -91,10 +104,6 @@ public class EscalationScheduler {
         applyAndNotify(player, data, tier, rarity, definition, currentTick);
     }
 
-    /**
-     * Общая часть между обычным спавном и debug-командами: создаёт инстанс,
-     * применяет его к данным игрока, шлёт чат-сообщение + звук + тост, проверяет победу.
-     */
     private static void applyAndNotify(ServerPlayer player, IEscalationPlayerData data,
                                         int tier, Rarity rarity, EscalationDefinition definition, long currentTick) {
         EscalationInstance instance = new EscalationInstance(definition, rarity, currentTick);
@@ -123,7 +132,6 @@ public class EscalationScheduler {
         }
     }
 
-    /** Форсирует обычный (случайная редкость) спавн немедленно — для debug-команды. */
     public static void debugForceSpawn(ServerPlayer player) {
         player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data -> {
             long currentTick = player.level().getGameTime();
@@ -131,12 +139,10 @@ public class EscalationScheduler {
         });
     }
 
-    /** Форсирует гарантированно LEGENDARY спавн немедленно — чтобы проверить тост/эскалацию без ожидания редкости. */
     public static void debugForceLegendaryToast(ServerPlayer player) {
         player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data -> {
             long currentTick = player.level().getGameTime();
-            double elapsedHours = data.getRealPlaytimeTicks() / 20.0 / 3600.0;
-            int tier = TierSelector.selectTier(elapsedHours, TOTAL_TARGET_HOURS, ORDER, JITTER);
+            int tier = selectTierFor(data);
             EscalationDefinition definition = pickDefinition(tier);
             if (definition == null) {
                 LOGGER.warn("Escalation debug: тир {} пуст в пуле", tier);
@@ -144,6 +150,11 @@ public class EscalationScheduler {
             }
             applyAndNotify(player, data, tier, Rarity.LEGENDARY, definition, currentTick);
         });
+    }
+
+    /** Назначает следующий спавн через случайный интервал от текущего момента (нужно при включении endless). */
+    public static void scheduleNextSpawn(ServerPlayer player, IEscalationPlayerData data) {
+        data.setNextSpawnAtTick(player.level().getGameTime() + randomIntervalTicks());
     }
 
     private static EscalationDefinition pickDefinition(int tier) {
@@ -155,7 +166,9 @@ public class EscalationScheduler {
     }
 
     private static long randomIntervalTicks() {
-        long range = INTERVAL_MAX_TICKS - INTERVAL_MIN_TICKS;
-        return INTERVAL_MIN_TICKS + (long) (RNG.nextDouble() * range);
+        long minTicks = cfg().timing.intervalMinSec * 20L;
+        long maxTicks = cfg().timing.intervalMaxSec * 20L;
+        long range = maxTicks - minTicks;
+        return minTicks + (long) (RNG.nextDouble() * range);
     }
 }

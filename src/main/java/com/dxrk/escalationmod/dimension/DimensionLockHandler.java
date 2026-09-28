@@ -1,6 +1,7 @@
 package com.dxrk.escalationmod.dimension;
 
 import com.dxrk.escalationmod.Escalation;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.data.EscalationCapabilities;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
 import net.minecraft.network.chat.Component;
@@ -25,18 +26,22 @@ public class DimensionLockHandler {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    // public — переиспользуется в HudSyncScheduler, чтобы не дублировать константу.
-    public static final long NETHER_REQUIRED_TICKS = 20L * 60 * 60 * 20;
     private static final long MESSAGE_COOLDOWN_TICKS = 60L;
 
     private static final Map<UUID, Long> lastRefusalTick = new HashMap<>();
+
+    /** Порог Nether в тиках реального времени игры (dimensionLock.netherRealHours). */
+    public static long netherRequiredTicks() {
+        return (long) (EscalationConfigManager.get().dimensionLock.netherRealHours * 60.0 * 60.0 * 20.0);
+    }
 
     @SubscribeEvent
     public static void onServerStarted(ServerStartedEvent event) {
         EscalationWorldData worldData = EscalationWorldData.get(event.getServer().overworld());
         LOGGER.info("Escalation: порог открытия End для этого мира — {} реальных часов (сгенерирован один раз при создании мира).",
                 String.format("%.2f", worldData.getEndRealHoursThreshold()));
-        LOGGER.info("Escalation: порог открытия Nether — фиксированные 20 реальных часов (одинаково для всех миров).");
+        LOGGER.info("Escalation: порог открытия Nether — {} реальных часов (из конфига).",
+                EscalationConfigManager.get().dimensionLock.netherRealHours);
     }
 
     @SubscribeEvent
@@ -52,7 +57,7 @@ public class DimensionLockHandler {
         String dimensionLabel;
 
         if (event.getDimension() == Level.NETHER) {
-            requiredTicks = NETHER_REQUIRED_TICKS;
+            requiredTicks = netherRequiredTicks();
             dimensionLabel = "Nether";
         } else if (event.getDimension() == Level.END) {
             ServerLevel overworld = serverLevel.getServer().overworld();

@@ -47,7 +47,7 @@ public final class EscalationToastOverlay implements IGuiOverlay {
         }
 
         if (height < fullHeight - 2) {
-            return; // бокс ещё растёт — текст пока не рисуем, чтобы не вылезал за рамку
+            return;
         }
 
         gg.enableScissor(x, y, x + width, y + height);
@@ -74,7 +74,7 @@ public final class EscalationToastOverlay implements IGuiOverlay {
 
         if (toast.legendary) {
             gg.drawString(font, "усиление: " + toast.getLegendaryEscalationSeconds() + "/"
-                    + ActiveEscalationToast.LEGENDARY_ESCALATION_CAP_SEC + " сек", x + pad, ty, 0xFFD700, false);
+                    + ActiveEscalationToast.escalationCapSec() + " сек", x + pad, ty, 0xFFD700, false);
         }
 
         gg.disableScissor();

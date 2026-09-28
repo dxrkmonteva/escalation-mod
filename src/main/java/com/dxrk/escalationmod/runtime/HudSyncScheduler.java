@@ -1,6 +1,8 @@
 package com.dxrk.escalationmod.runtime;
 
 import com.dxrk.escalationmod.Escalation;
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.data.EscalationCapabilities;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
 import com.dxrk.escalationmod.dimension.DimensionLockHandler;
@@ -21,8 +23,6 @@ import java.util.Map;
 @Mod.EventBusSubscriber(modid = Escalation.MODID)
 public class HudSyncScheduler {
 
-    private static final long END_SOON_THRESHOLD_TICKS = 10L * 60 * 60 * 20;
-
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
@@ -41,16 +41,19 @@ public class HudSyncScheduler {
 
     private static void sendSnapshot(ServerPlayer player, IEscalationPlayerData data,
                                       long currentTick, long endRequiredTicks) {
+        EscalationConfig cfg = EscalationConfigManager.get();
         long playerTicks = data.getRealPlaytimeTicks();
 
-        boolean netherUnlocked = playerTicks >= DimensionLockHandler.NETHER_REQUIRED_TICKS;
-        long netherRemaining = Math.max(0, DimensionLockHandler.NETHER_REQUIRED_TICKS - playerTicks);
+        long netherRequired = DimensionLockHandler.netherRequiredTicks();
+        boolean netherUnlocked = playerTicks >= netherRequired;
+        long netherRemaining = Math.max(0, netherRequired - playerTicks);
 
+        long endSoonThresholdTicks = (long) (cfg.dimensionLock.endSoonThresholdHours * 60.0 * 60.0 * 20.0);
         long endRemaining = endRequiredTicks - playerTicks;
         String endStatus;
         if (endRemaining <= 0) {
             endStatus = "unlocked";
-        } else if (endRemaining < END_SOON_THRESHOLD_TICKS) {
+        } else if (endRemaining < endSoonThresholdTicks) {
             endStatus = "locked_soon";
         } else {
             endStatus = "locked_long";
@@ -60,11 +63,20 @@ public class HudSyncScheduler {
         long mercyRemaining = mercyActive ? data.getMercyPauseEndTick() - currentTick : 0L;
         long nextSpawnRemaining = mercyActive ? 0L : Math.max(0, data.getNextSpawnAtTick() - currentTick);
 
+        int runState = EscalationHudSyncPacket.RUN_NORMAL;
+        if (data.hasWon()) {
+            if (data.isEndlessMode()) {
+                runState = EscalationHudSyncPacket.RUN_ENDLESS;
+            } else if (cfg.winCondition.stopNewSpawnsAfterWin) {
+                runState = EscalationHudSyncPacket.RUN_WON_STOPPED;
+            }
+        }
+
         List<EscalationHudSyncPacket.JournalRow> rows = buildJournalRows(data);
 
         EscalationNetwork.CHANNEL.send(PacketDistributor.PLAYER.with(() -> player),
                 new EscalationHudSyncPacket(netherUnlocked, netherRemaining, endStatus,
-                        mercyActive, mercyRemaining, nextSpawnRemaining, rows));
+                        mercyActive, mercyRemaining, nextSpawnRemaining, runState, rows));
     }
 
     private static List<EscalationHudSyncPacket.JournalRow> buildJournalRows(IEscalationPlayerData data) {

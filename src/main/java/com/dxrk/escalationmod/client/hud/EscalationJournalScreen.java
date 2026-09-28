@@ -1,5 +1,7 @@
 package com.dxrk.escalationmod.client.hud;
 
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -15,8 +17,9 @@ public class EscalationJournalScreen extends Screen {
     private static final int DESC_LINE_HEIGHT = 10;
     private static final int PADDING = 12;
     private static final int LIST_TOP = 46;
-    private static final long STAGGER_MS = 55L;
-    private static final long TYPEWRITER_MS_PER_CHAR = 8L;
+
+    private final long staggerMs;
+    private final long typewriterMsPerChar;
 
     private final Set<String> expandedPoolIds = new HashSet<>();
     private final List<RowBounds> rowBounds = new ArrayList<>();
@@ -28,6 +31,9 @@ public class EscalationJournalScreen extends Screen {
 
     public EscalationJournalScreen() {
         super(Component.literal("Журнал усложнений"));
+        EscalationConfig.UiSection ui = EscalationConfigManager.get().ui;
+        this.staggerMs = (long) ui.journalStaggerMs;
+        this.typewriterMsPerChar = (long) ui.journalTypewriterMsPerChar;
     }
 
     public void skipRevealAnimation() {
@@ -40,7 +46,7 @@ public class EscalationJournalScreen extends Screen {
         long t = screenOpenedAtMs;
         for (ClientHudState.JournalDisplayRow row : sorted) {
             revealStartMs.put(row.poolId, t);
-            t += STAGGER_MS;
+            t += staggerMs;
         }
     }
 
@@ -55,7 +61,6 @@ public class EscalationJournalScreen extends Screen {
 
         int totalInstances = sorted.stream().mapToInt(ClientHudState.JournalDisplayRow::total).sum();
 
-        // панель-рамка сверху, в духе тостов
         gg.fill(PADDING - 6, PADDING - 6, this.width - PADDING + 6, LIST_TOP - 4, 0xC0181818);
         gg.fill(PADDING - 6, PADDING - 6, this.width - PADDING + 6, PADDING - 4, 0xFF55AAFF);
 
@@ -84,7 +89,6 @@ public class EscalationJournalScreen extends Screen {
             boolean started = skipped || now >= startsAt;
 
             if (!started) {
-                // ещё не подошла очередь — тусклая заглушка-плейсхолдер вместо пустоты
                 if (y + NAME_ROW_HEIGHT > LIST_TOP && y < listBottom) {
                     gg.fill(PADDING, y + 2, PADDING + 60, y + NAME_ROW_HEIGHT - 2, 0x20FFFFFF);
                 }
@@ -99,8 +103,12 @@ public class EscalationJournalScreen extends Screen {
 
             String tierTag = "[T" + row.tier + "]";
             String fullLine = tierTag + " " + row.name + (row.total() > 1 ? " \u00d7" + row.total() : "");
-            int visibleChars = skipped ? fullLine.length()
-                    : (int) Math.min(fullLine.length(), sinceStart / TYPEWRITER_MS_PER_CHAR);
+            int visibleChars;
+            if (skipped || typewriterMsPerChar == 0L) {
+                visibleChars = fullLine.length();
+            } else {
+                visibleChars = (int) Math.min(fullLine.length(), sinceStart / typewriterMsPerChar);
+            }
             String shown = fullLine.substring(0, visibleChars);
             boolean lineDone = visibleChars >= fullLine.length();
 
@@ -114,7 +122,7 @@ public class EscalationJournalScreen extends Screen {
                 gg.drawString(this.font, shown, PADDING, y, nameColor, false);
 
                 if (lineDone) {
-                    drawRarityDots(gg, this.font, row, PADDING + this.font.width(fullLine) + 8, y, contentWidth);
+                    drawRarityDots(gg, this.font, row, PADDING + this.font.width(fullLine) + 8, y);
                 }
             }
             y += NAME_ROW_HEIGHT;
@@ -150,7 +158,7 @@ public class EscalationJournalScreen extends Screen {
         super.render(gg, mouseX, mouseY, partialTick);
     }
 
-    private void drawRarityDots(GuiGraphics gg, Font font, ClientHudState.JournalDisplayRow row, int x, int y, int contentWidth) {
+    private void drawRarityDots(GuiGraphics gg, Font font, ClientHudState.JournalDisplayRow row, int x, int y) {
         int dotX = x;
         dotX = drawDot(gg, font, dotX, y, row.commonCount, 0xFFAAAAAA);
         dotX = drawDot(gg, font, dotX, y, row.rareCount, 0xFF5599FF);

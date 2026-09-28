@@ -1,5 +1,8 @@
 package com.dxrk.escalationmod.runtime;
 
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
+
 import java.security.SecureRandom;
 
 public class RarityRoller {
@@ -7,19 +10,16 @@ public class RarityRoller {
     // Раздел 12 спеки: только SecureRandom, никакого java.util.Random.
     private static final SecureRandom RNG = new SecureRandom();
 
-    // Табличные значения раздела 6 — тир 1 и тир 10, между ними линейная интерполяция.
-    private static final double COMMON_T1 = 70.0, COMMON_T10 = 40.0;
-    private static final double RARE_T1 = 22.0, RARE_T10 = 32.0;
-    private static final double EPIC_T1 = 7.0, EPIC_T10 = 21.0;
-
     public static Rarity roll(int tier) {
+        EscalationConfig.WeightsSection w = EscalationConfigManager.get().rarity.weights;
+
         double t = clampTier(tier);
         double fraction = (t - 1.0) / 9.0;
 
-        double common = lerp(COMMON_T1, COMMON_T10, fraction);
-        double rare = lerp(RARE_T1, RARE_T10, fraction);
-        double epic = lerp(EPIC_T1, EPIC_T10, fraction);
-        double legendary = 0.5 + t * 0.65;
+        double common = lerp(w.commonTier1, w.commonTier10, fraction);
+        double rare = lerp(w.rareTier1, w.rareTier10, fraction);
+        double epic = lerp(w.epicTier1, w.epicTier10, fraction);
+        double legendary = w.legendaryBasePercent + t * w.legendaryPerTierPercent;
 
         double total = common + rare + epic + legendary;
         common /= total;

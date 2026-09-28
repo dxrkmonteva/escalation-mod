@@ -1,34 +1,32 @@
 package com.dxrk.escalationmod.client.toast;
 
+import com.dxrk.escalationmod.config.EscalationConfig;
+import com.dxrk.escalationmod.config.EscalationConfigManager;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.FormattedText;
 import net.minecraft.util.FormattedCharSequence;
 
 import java.util.List;
 
-/** Рантайм-состояние одного показанного тоста (раздел 10 спеки). */
+/** Рантайм-состояние одного показанного тоста. Тайминги — из конфига (ui.toast*), фиксируются при создании. */
 public class ActiveEscalationToast {
-
-    public static final long GROW_MS = 220L;
-    public static final long HOLD_MS_MIN = 5000L;
-    public static final long HOLD_MS_MAX = 8000L;
-    public static final long SHRINK_MS = 180L;
-    public static final long TYPEWRITER_MS_PER_CHAR = 18L;
-    public static final int LEGENDARY_ESCALATION_CAP_SEC = 30;
 
     public static final int WIDTH = 220;
     public static final int PADDING = 6;
     public static final int LINE_HEIGHT = 10;
 
     public final int tier;
-    public final String rarityKey; // "common" | "rare" | "epic" | "legendary"
+    public final String rarityKey;
     public final String title;
     public final String name;
     public final String description;
     public final boolean legendary;
 
     private final long spawnTimeMs;
+    private final long growMs;
     private final long holdDurationMs;
+    private final long shrinkMs;
+    private final long typewriterMsPerChar;
     private long skipRequestedAtMs = -1L;
 
     private List<FormattedCharSequence> cachedLines;
@@ -43,8 +41,18 @@ public class ActiveEscalationToast {
         this.description = description;
         this.legendary = legendary;
         this.spawnTimeMs = System.currentTimeMillis();
-        long span = HOLD_MS_MAX - HOLD_MS_MIN;
-        this.holdDurationMs = HOLD_MS_MIN + (long) (Math.random() * span);
+
+        EscalationConfig.UiSection ui = EscalationConfigManager.get().ui;
+        this.growMs = Math.max(1L, (long) ui.toastGrowMs);
+        this.shrinkMs = Math.max(1L, (long) ui.toastShrinkMs);
+        this.typewriterMsPerChar = Math.max(0L, (long) ui.toastTypewriterMsPerChar);
+        double holdSec = ui.toastHoldMinSec + Math.random() * (ui.toastHoldMaxSec - ui.toastHoldMinSec);
+        this.holdDurationMs = (long) (holdSec * 1000.0);
+    }
+
+    /** Потолок счётчика эскалации легендарки на тосте (rarity.legendaryEscalation.durationSec). */
+    public static int escalationCapSec() {
+        return Math.max(1, EscalationConfigManager.get().rarity.legendaryEscalation.durationSec);
     }
 
     public List<FormattedCharSequence> getWrappedLines(Font font, int maxWidth) {
@@ -75,11 +83,11 @@ public class ActiveEscalationToast {
         long elapsed = elapsedMs();
         if (skipRequestedAtMs >= 0) {
             long sinceSkip = System.currentTimeMillis() - skipRequestedAtMs;
-            return sinceSkip >= SHRINK_MS ? ToastPhase.DONE : ToastPhase.SHRINKING;
+            return sinceSkip >= shrinkMs ? ToastPhase.DONE : ToastPhase.SHRINKING;
         }
-        if (elapsed < GROW_MS) return ToastPhase.GROWING;
-        if (elapsed < GROW_MS + holdDurationMs) return ToastPhase.HOLDING;
-        if (elapsed < GROW_MS + holdDurationMs + SHRINK_MS) return ToastPhase.SHRINKING;
+        if (elapsed < growMs) return ToastPhase.GROWING;
+        if (elapsed < growMs + holdDurationMs) return ToastPhase.HOLDING;
+        if (elapsed < growMs + holdDurationMs + shrinkMs) return ToastPhase.SHRINKING;
         return ToastPhase.DONE;
     }
 
@@ -92,7 +100,7 @@ public class ActiveEscalationToast {
         long elapsed = elapsedMs();
         float t;
         if (phase == ToastPhase.GROWING) {
-            t = Math.min(1f, elapsed / (float) GROW_MS);
+            t = Math.min(1f, elapsed / (float) growMs);
             return easeOutCubic(t);
         }
         if (phase == ToastPhase.HOLDING) {
@@ -101,9 +109,9 @@ public class ActiveEscalationToast {
         if (phase == ToastPhase.SHRINKING) {
             long shrinkStart = skipRequestedAtMs >= 0
                     ? skipRequestedAtMs
-                    : spawnTimeMs + GROW_MS + holdDurationMs;
+                    : spawnTimeMs + growMs + holdDurationMs;
             long sinceShrink = System.currentTimeMillis() - shrinkStart;
-            t = Math.min(1f, sinceShrink / (float) SHRINK_MS);
+            t = Math.min(1f, sinceShrink / (float) shrinkMs);
             return 1f - easeOutCubic(t);
         }
         return 0f;
@@ -116,14 +124,15 @@ public class ActiveEscalationToast {
 
     public int getTypewriterVisibleChars() {
         if (getPhase() == ToastPhase.GROWING) return 0;
-        long sinceHoldStart = elapsedMs() - GROW_MS;
+        long sinceHoldStart = elapsedMs() - growMs;
         if (sinceHoldStart < 0) return 0;
-        int chars = (int) (sinceHoldStart / TYPEWRITER_MS_PER_CHAR);
+        if (typewriterMsPerChar == 0L) return description.length();
+        int chars = (int) (sinceHoldStart / typewriterMsPerChar);
         return Math.min(description.length(), Math.max(0, chars));
     }
 
     public int getLegendaryEscalationSeconds() {
         long sec = elapsedMs() / 1000L;
-        return (int) Math.min(LEGENDARY_ESCALATION_CAP_SEC, sec);
+        return (int) Math.min(escalationCapSec(), sec);
     }
 }
