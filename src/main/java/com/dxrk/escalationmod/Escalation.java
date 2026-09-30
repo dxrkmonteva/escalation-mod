@@ -4,6 +4,7 @@ import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.network.EscalationNetwork;
 import com.dxrk.escalationmod.pool.PoolRegistry;
 import com.dxrk.escalationmod.runtime.RuntimeSmokeTest;
+import com.dxrk.escalationmod.stats.StatEngineSmokeTest;
 import com.dxrk.escalationmod.value.ValueRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -31,5 +32,6 @@ public class Escalation {
         PoolRegistry.init();
         ValueRegistry.init();
         RuntimeSmokeTest.run();
+        StatEngineSmokeTest.run();
     }
 }

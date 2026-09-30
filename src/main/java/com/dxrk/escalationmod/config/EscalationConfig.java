@@ -11,6 +11,7 @@ public class EscalationConfig {
     public TierProgressionSection tierProgression = new TierProgressionSection();
     public DimensionLockSection dimensionLock = new DimensionLockSection();
     public RaritySection rarity = new RaritySection();
+    public StackingSection stacking = new StackingSection();
     public MercyRuleSection mercyRule = new MercyRuleSection();
     public WinConditionSection winCondition = new WinConditionSection();
     public UiSection ui = new UiSection();
@@ -65,6 +66,16 @@ public class EscalationConfig {
         public int durationSec = 30;
     }
 
+    /** Раздел 7: стакинг и клэмпы. */
+    public static class StackingSection {
+        /** Максимум снижения для percent_stat_clamped (%), на каждый инстанс и на итог. */
+        public double percentStatClamp = 99.9;
+        /** Инженерный потолок против NaN/Infinity — не балансный. */
+        public double engineSafetyCap = 1.0E15;
+        /** Радиус поиска ближайшего игрока, чей множитель применяется к заспавнившемуся мобу. */
+        public double mobStatNearestPlayerRadius = 128.0;
+    }
+
     public static class MercyRuleSection {
         public int deathsToTrigger = 5;
         public double pauseDurationMin = 30.0;
@@ -104,6 +115,7 @@ public class EscalationConfig {
         if (rarity.weights == null) rarity.weights = new WeightsSection();
         if (rarity.multipliers == null) rarity.multipliers = new MultipliersSection();
         if (rarity.legendaryEscalation == null) rarity.legendaryEscalation = new LegendaryEscalationSection();
+        if (stacking == null) stacking = new StackingSection();
         if (mercyRule == null) mercyRule = new MercyRuleSection();
         if (winCondition == null) winCondition = new WinConditionSection();
         if (ui == null) ui = new UiSection();
@@ -142,6 +154,10 @@ public class EscalationConfig {
 
         rarity.legendaryEscalation.perSecond = Math.max(0.0, rarity.legendaryEscalation.perSecond);
         rarity.legendaryEscalation.durationSec = Math.max(0, rarity.legendaryEscalation.durationSec);
+
+        stacking.percentStatClamp = clamp(stacking.percentStatClamp, 0.0, 99.99);
+        stacking.engineSafetyCap = Math.max(1.0, stacking.engineSafetyCap);
+        stacking.mobStatNearestPlayerRadius = Math.max(1.0, stacking.mobStatNearestPlayerRadius);
 
         mercyRule.deathsToTrigger = Math.max(1, mercyRule.deathsToTrigger);
         mercyRule.pauseDurationMin = Math.max(0.1, mercyRule.pauseDurationMin);

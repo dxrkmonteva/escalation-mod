@@ -152,6 +152,17 @@ public class EscalationScheduler {
         });
     }
 
+    /** Выдать конкретное усложнение с заданной редкостью (debug). @return false если id нет в пуле. */
+    public static boolean debugGive(ServerPlayer player, String poolId, Rarity rarity) {
+        EscalationDefinition definition = PoolRegistry.getById(poolId);
+        if (definition == null) {
+            return false;
+        }
+        player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data ->
+                applyAndNotify(player, data, definition.tier, rarity, definition, player.level().getGameTime()));
+        return true;
+    }
+
     /** Назначает следующий спавн через случайный интервал от текущего момента (нужно при включении endless). */
     public static void scheduleNextSpawn(ServerPlayer player, IEscalationPlayerData data) {
         data.setNextSpawnAtTick(player.level().getGameTime() + randomIntervalTicks());
