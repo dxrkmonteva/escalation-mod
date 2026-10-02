@@ -28,6 +28,11 @@ public class EscalationNetwork {
                 EscalationHudSyncPacket::encode,
                 EscalationHudSyncPacket::decode,
                 EscalationHudSyncPacket::handle);
+        CHANNEL.registerMessage(id++,
+                ClientModifiersPacket.class,
+                ClientModifiersPacket::encode,
+                ClientModifiersPacket::decode,
+                ClientModifiersPacket::handle);
     }
 
     private EscalationNetwork() {
