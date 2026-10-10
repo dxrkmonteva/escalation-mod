@@ -32,6 +32,9 @@ public interface IEscalationPlayerData {
     long getMercyPauseEndTick();
     void setMercyPauseEndTick(long tick);
 
+    /** Персистентное состояние behavioral-обработчиков: подтег на каждый pool id (таймеры, счётчики). */
+    CompoundTag getBehaviorState();
+
     CompoundTag serializeNBT();
     void deserializeNBT(CompoundTag tag);
 }

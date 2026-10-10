@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod;
 
+import com.dxrk.escalationmod.behavior.BehaviorRegistry;
 import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.network.EscalationNetwork;
 import com.dxrk.escalationmod.pool.PoolRegistry;
@@ -31,6 +32,7 @@ public class Escalation {
         LOGGER.info("Escalation mod: commonSetup — загружаю пул усложнений...");
         PoolRegistry.init();
         ValueRegistry.init();
+        BehaviorRegistry.init();
         RuntimeSmokeTest.run();
         StatEngineSmokeTest.run();
     }

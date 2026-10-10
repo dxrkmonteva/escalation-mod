@@ -109,6 +109,13 @@ public class EscalationPlayerData implements IEscalationPlayerData {
         this.mercyPauseEndTick = tick;
     }
 
+    private CompoundTag behaviorState = new CompoundTag();
+
+    @Override
+    public CompoundTag getBehaviorState() {
+        return behaviorState;
+    }
+
     @Override
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
@@ -131,6 +138,7 @@ public class EscalationPlayerData implements IEscalationPlayerData {
             instancesTag.add(instance.serializeNBT());
         }
         tag.put("activeInstances", instancesTag);
+        tag.put("behaviorState", behaviorState.copy());
 
         return tag;
     }
@@ -152,6 +160,9 @@ public class EscalationPlayerData implements IEscalationPlayerData {
                 seenPoolIds.add(seenTag.getString(i));
             }
         }
+
+        this.behaviorState = tag.contains("behaviorState", Tag.TAG_COMPOUND)
+                ? tag.getCompound("behaviorState").copy() : new CompoundTag();
 
         activeInstances.clear();
         if (tag.contains("activeInstances")) {

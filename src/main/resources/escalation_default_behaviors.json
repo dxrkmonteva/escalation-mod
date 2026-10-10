@@ -1,0 +1,487 @@
+{
+ "version": 1,
+ "_help": "Встроенные реализации behavioral/flavor. Править лучше через config/escalation/behaviors_override.json.",
+ "behaviors": {
+  "escalation_hand_0007": {
+   "template": "trigger_action",
+   "note": "5%: свежескрафченный инструмент/оружие сразу теряет 1 прочность",
+   "trigger": "item_crafted",
+   "chance": 5,
+   "filters": {
+    "item": "tool_or_weapon"
+   },
+   "actions": [
+    {
+     "type": "item_damage",
+     "amount": 1,
+     "sound": "minecraft:entity.item.break",
+     "volume": 0.4
+    }
+   ]
+  },
+  "escalation_hand_0010": {
+   "template": "trigger_action",
+   "note": "15%: кровать не даёт заснуть",
+   "trigger": "sleep_attempt",
+   "chance": 15,
+   "actions": [
+    {
+     "type": "cancel_sleep",
+     "message": "Не получается заснуть..."
+    }
+   ]
+  },
+  "escalation_hand_0011": {
+   "template": "trigger_action",
+   "note": "2%: при получении урона выпадает один предмет из инвентаря",
+   "trigger": "player_hurt",
+   "chance": 2,
+   "actions": [
+    {
+     "type": "drop_item"
+    }
+   ]
+  },
+  "escalation_hand_0021": {
+   "template": "trigger_action",
+   "note": "25% при добыче руды: отравление на 4 с (газ/пыль)",
+   "trigger": "block_break",
+   "chance": 25,
+   "filters": {
+    "block": "ore"
+   },
+   "actions": [
+    {
+     "type": "effect",
+     "effect": "minecraft:poison",
+     "seconds": 4,
+     "amplifier": 0,
+     "message": "Пыль и газ в шахте..."
+    }
+   ]
+  },
+  "escalation_hand_0035": {
+   "template": "trigger_action",
+   "note": "6% при рубке дерева: падающая ветка, 2 ед. урона",
+   "trigger": "block_break",
+   "chance": 6,
+   "filters": {
+    "block": "log"
+   },
+   "actions": [
+    {
+     "type": "damage",
+     "amount": 2,
+     "message": "Ветка упала вам на голову!"
+    }
+   ]
+  },
+  "escalation_hand_0036": {
+   "template": "trigger_action",
+   "note": "при смерти каждый предмет с шансом 30% сгорает безвозвратно",
+   "trigger": "death_drops",
+   "chance": 30,
+   "actions": [
+    {
+     "type": "destroy_item"
+    }
+   ]
+  },
+  "escalation_hand_0051": {
+   "template": "trigger_action",
+   "note": "3% при уроне >= 8: случайная надетая вещь ломается навсегда",
+   "trigger": "player_hurt",
+   "chance": 3,
+   "filters": {
+    "damage_min": 8
+   },
+   "actions": [
+    {
+     "type": "break_equipped",
+     "message": "Критический удар — что-то сломалось навсегда!"
+    }
+   ]
+  },
+  "escalation_hand_0061": {
+   "template": "trigger_action",
+   "note": "10% под дождём: кресало не поджигает",
+   "trigger": "right_click_block",
+   "chance": 10,
+   "conditions": [
+    "raining"
+   ],
+   "filters": {
+    "item": "flint_and_steel"
+   },
+   "actions": [
+    {
+     "type": "cancel",
+     "sound": "minecraft:block.fire.extinguish",
+     "message": "Спички отсырели"
+    }
+   ]
+  },
+  "escalation_hand_0065": {
+   "template": "trigger_action",
+   "note": "3%: сундук заедает при открытии, нужен повторный клик",
+   "trigger": "right_click_block",
+   "chance": 3,
+   "filters": {
+    "block": "chest"
+   },
+   "actions": [
+    {
+     "type": "cancel",
+     "sound": "minecraft:block.wooden_trapdoor.close",
+     "message": "Крышка заела"
+    }
+   ]
+  },
+  "escalation_hand_0116": {
+   "template": "trigger_action",
+   "note": "7%: рычаг/кнопка залипает",
+   "trigger": "right_click_block",
+   "chance": 7,
+   "filters": {
+    "block": "lever_or_button"
+   },
+   "actions": [
+    {
+     "type": "cancel",
+     "sound": "minecraft:block.lever.click",
+     "pitch": 0.6,
+     "message": "Залипло"
+    }
+   ]
+  },
+  "escalation_hand_0069": {
+   "template": "trigger_action",
+   "note": "любая операция на наковальне стоит на 1 уровень опыта больше (списывается при получении результата)",
+   "trigger": "anvil_use",
+   "actions": [
+    {
+     "type": "xp_levels",
+     "amount": -1,
+     "message": "Наковальня берёт лишний уровень"
+    }
+   ]
+  },
+  "escalation_hand_0086": {
+   "template": "trigger_action",
+   "note": "комбинирование зачарованных книг стоит на 1 уровень больше (списывается при получении результата)",
+   "trigger": "anvil_use",
+   "filters": {
+    "both_enchanted_books": true
+   },
+   "actions": [
+    {
+     "type": "xp_levels",
+     "amount": -1,
+     "message": "Дорогие книги: -1 уровень"
+    }
+   ]
+  },
+  "escalation_hand_0153": {
+   "template": "trigger_action",
+   "note": "3+ игровых суток без сна: каждые 45 с тошнота 6 с",
+   "trigger": "periodic",
+   "period_sec": 45,
+   "conditions": [
+    "no_sleep_days:3"
+   ],
+   "actions": [
+    {
+     "type": "effect",
+     "effect": "minecraft:nausea",
+     "seconds": 6,
+     "amplifier": 0
+    }
+   ]
+  },
+  "escalation_hand_0104": {
+   "template": "trigger_action",
+   "note": "грибные леса Нижнего мира: каждые 30 с тошнота 5 с",
+   "trigger": "periodic",
+   "period_sec": 30,
+   "conditions": [
+    "in_nether_forest"
+   ],
+   "actions": [
+    {
+     "type": "effect",
+     "effect": "minecraft:nausea",
+     "seconds": 5,
+     "amplifier": 0
+    }
+   ]
+  },
+  "escalation_hand_0144": {
+   "template": "trigger_action",
+   "note": "грибные леса Нижнего мира без шлема: замедление",
+   "trigger": "periodic",
+   "period_sec": 10,
+   "conditions": [
+    "in_nether_forest",
+    "no_helmet"
+   ],
+   "actions": [
+    {
+     "type": "effect",
+     "effect": "minecraft:slowness",
+     "seconds": 8,
+     "amplifier": 0
+    }
+   ]
+  },
+  "escalation_hand_0155": {
+   "template": "trigger_action",
+   "note": "утром на траве без обуви: лёгкое замедление",
+   "trigger": "periodic",
+   "period_sec": 2,
+   "conditions": [
+    "morning",
+    "on_grass",
+    "no_boots"
+   ],
+   "actions": [
+    {
+     "type": "effect",
+     "effect": "minecraft:slowness",
+     "seconds": 3,
+     "amplifier": 0
+    }
+   ]
+  },
+  "escalation_hand_0904": {
+   "template": "trigger_action",
+   "note": "полдень в бэдлендах под открытым небом: слабость (перегрев)",
+   "trigger": "periodic",
+   "period_sec": 5,
+   "conditions": [
+    "in_badlands",
+    "noon",
+    "outdoors"
+   ],
+   "actions": [
+    {
+     "type": "effect",
+     "effect": "minecraft:weakness",
+     "seconds": 6,
+     "amplifier": 0
+    }
+   ]
+  },
+  "escalation_hand_0033": {
+   "template": "trigger_action",
+   "note": "раз в игровые сутки (20 мин реального времени) на 150 с резко темнеет (эффект Тьмы)",
+   "trigger": "periodic",
+   "period_sec": 1200,
+   "conditions": [
+    "overworld"
+   ],
+   "actions": [
+    {
+     "type": "effect",
+     "effect": "minecraft:darkness",
+     "seconds": 150,
+     "amplifier": 0,
+     "message": "Среди дня наступает тьма..."
+    }
+   ]
+  },
+  "escalation_hand_0017": {
+   "template": "trigger_action",
+   "note": "каждые 5 мин при ясной погоде с шансом 35% начинается дождь на 10 мин",
+   "trigger": "periodic",
+   "period_sec": 300,
+   "chance": 35,
+   "conditions": [
+    "overworld",
+    "clear_weather"
+   ],
+   "actions": [
+    {
+     "type": "rain",
+     "duration_sec": 600
+    }
+   ]
+  },
+  "escalation_hand_0003": {
+   "template": "custom_slippery_blocks",
+   "note": "5% обычных блоков скользят как лёд (клиентский эффект)",
+   "chance": 5
+  },
+  "escalation_hand_0048": {
+   "template": "custom_alarm",
+   "note": "раз в 3 ч на 5 мин все враждебные мобы в радиусе 64 идут на игрока",
+   "period_sec": 10800,
+   "duration_sec": 300,
+   "radius": 64,
+   "first_delay_sec": 3600
+  },
+  "escalation_hand_0131": {
+   "template": "custom_dark_paranoia",
+   "note": "5+ мин без света: фальшивые шаги",
+   "dark_seconds": 300,
+   "light_level": 4,
+   "chance": 4
+  },
+  "escalation_hand_0178": {
+   "template": "custom_loneliness",
+   "note": "час без живых существ рядом: слабость",
+   "alone_seconds": 3600,
+   "radius": 32,
+   "effect": "minecraft:weakness",
+   "amplifier": 0
+  },
+  "escalation_hand_0038": {
+   "template": "spawn_elite",
+   "note": "раз в час элитный охотник идёт к игроку",
+   "entity": "minecraft:zombie",
+   "period_sec": 3600,
+   "first_delay_sec": 1800,
+   "stack_period": true,
+   "min_period_sec": 600,
+   "cap": 2,
+   "health_mult": 2.5,
+   "damage_mult": 1.5,
+   "speed_mult": 1.1,
+   "armor": "iron",
+   "weapon": "iron_sword",
+   "glowing": true,
+   "name": "Охотник",
+   "message": "§c☠ Охота началась: по вашему следу идёт Охотник!"
+  },
+  "escalation_hand_0245": {
+   "template": "spawn_elite",
+   "note": "уникальный зомби-чемпион в золотой броне преследует игрока",
+   "entity": "minecraft:zombie",
+   "period_sec": 5400,
+   "first_delay_sec": 3600,
+   "stack_period": false,
+   "cap": 1,
+   "health_mult": 3.0,
+   "damage_mult": 1.3,
+   "speed_mult": 1.05,
+   "armor": "golden",
+   "weapon": "golden_sword",
+   "follow_range": 96,
+   "name": "Позолоченный преследователь",
+   "message": "§6☠ Золотой преследователь учуял вас."
+  },
+  "escalation_hand_0053": {
+   "template": "spawn_elite",
+   "note": "раз в несколько часов тёмный клон игрока с его экипировкой",
+   "entity": "minecraft:zombie",
+   "period_sec": 10800,
+   "first_delay_sec": 5400,
+   "stack_period": false,
+   "cap": 1,
+   "health_mult": 1.5,
+   "damage_mult": 1.5,
+   "speed_mult": 1.15,
+   "armor": "copy_player",
+   "glowing": false,
+   "name": "Двойник",
+   "message": "§8☠ Ваш двойник вышел на охоту."
+  },
+  "escalation_hand_0310": {
+   "template": "spawn_elite",
+   "note": "редко: копия игрока с текущим инвентарём — дуэль с собой",
+   "entity": "minecraft:zombie",
+   "period_sec": 9000,
+   "first_delay_sec": 4500,
+   "stack_period": false,
+   "cap": 1,
+   "health_mult": 2.0,
+   "damage_mult": 1.4,
+   "speed_mult": 1.1,
+   "armor": "copy_player",
+   "name": "Тёмное отражение",
+   "message": "§5☠ Тёмное отражение ищет вас."
+  },
+  "escalation_hand_0455": {
+   "template": "villager_price",
+   "note": "рыбаки продают удочки на 10% дороже",
+   "profession": "fisherman",
+   "result": [
+    "fishing_rod"
+   ],
+   "percent": 10
+  },
+  "escalation_hand_0460": {
+   "template": "villager_price",
+   "note": "кузнецы-бронники продают зачарованную броню дороже на 1",
+   "profession": "armorer",
+   "result": [
+    "enchanted_armor"
+   ],
+   "flat": 1
+  },
+  "escalation_hand_0470": {
+   "template": "villager_price",
+   "note": "пастухи продают ножницы и шерсть на 10% дороже",
+   "profession": "shepherd",
+   "result": [
+    "contains:shears",
+    "contains:wool"
+   ],
+   "percent": 10
+  },
+  "escalation_hand_0473": {
+   "template": "villager_price",
+   "note": "библиотекари продают зачарованные книги на 1 изумруд дороже",
+   "profession": "librarian",
+   "result": [
+    "enchanted_book"
+   ],
+   "flat": 1
+  },
+  "escalation_hand_0497": {
+   "template": "villager_price",
+   "note": "инструментальщики продают алмазные кирки на 1 изумруд дороже",
+   "profession": "toolsmith",
+   "result": [
+    "diamond_pickaxe"
+   ],
+   "flat": 1
+  },
+  "escalation_hand_0772": {
+   "template": "villager_price",
+   "note": "каменщики продают кирпичи и терракоту на 10% дороже в полнолуние",
+   "profession": "mason",
+   "result": [
+    "contains:brick",
+    "contains:terracotta"
+   ],
+   "percent": 10,
+   "conditions": [
+    "full_moon"
+   ]
+  },
+  "escalation_hand_0774": {
+   "template": "villager_price",
+   "note": "оперщики продают стрелы на 10% дороже, если недавно был бой",
+   "profession": "fletcher",
+   "result": [
+    "contains:arrow"
+   ],
+   "percent": 10,
+   "conditions": [
+    "recent_combat"
+   ]
+  },
+  "escalation_hand_0781": {
+   "template": "villager_price",
+   "note": "каменщики продают мозаичные блоки на 10% дороже в дождь",
+   "profession": "mason",
+   "result": [
+    "contains:chiseled"
+   ],
+   "percent": 10,
+   "conditions": [
+    "raining"
+   ]
+  }
+ }
+}

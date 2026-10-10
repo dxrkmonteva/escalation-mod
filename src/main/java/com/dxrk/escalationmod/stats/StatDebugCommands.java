@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod.stats;
 
+import com.dxrk.escalationmod.behavior.ActiveEscalations;
 import com.dxrk.escalationmod.Escalation;
 import com.dxrk.escalationmod.data.EscalationCapabilities;
 import com.dxrk.escalationmod.runtime.EscalationScheduler;
@@ -49,9 +50,7 @@ public class StatDebugCommands {
                 .executes(ctx -> {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
                     player.getCapability(EscalationCapabilities.PLAYER_DATA).ifPresent(data -> {
-                        int n = data.getActiveInstances().size();
-                        data.getActiveInstances().clear();
-                        StatEngine.invalidate(player.getUUID());
+                        int n = ActiveEscalations.clear(player, data);
                         ctx.getSource().sendSuccess(() -> Component.literal(
                                 "Escalation debug: снято экземпляров: " + n), false);
                     });

@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod.mercy;
 
+import com.dxrk.escalationmod.behavior.ActiveEscalations;
 import com.dxrk.escalationmod.config.EscalationConfig;
 import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
@@ -98,14 +99,7 @@ public class MercyRuleManager {
             idsToRemove.add(sortedGroups.get(i).getKey());
         }
 
-        int removedInstanceCount = 0;
-        Iterator<EscalationInstance> it = active.iterator();
-        while (it.hasNext()) {
-            if (idsToRemove.contains(it.next().poolId)) {
-                it.remove();
-                removedInstanceCount++;
-            }
-        }
+        int removedInstanceCount = ActiveEscalations.removeIf(player, data, inst -> idsToRemove.contains(inst.poolId));
 
         int actualPercent = (int) Math.round(removeGroupCount * 100.0 / totalUniqueIds);
 

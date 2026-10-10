@@ -7,7 +7,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 
 public class EscalationNetwork {
 
-    private static final String PROTOCOL_VERSION = "1";
+    private static final String PROTOCOL_VERSION = "2";
 
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(Escalation.MODID, "main"),
@@ -33,6 +33,11 @@ public class EscalationNetwork {
                 ClientModifiersPacket::encode,
                 ClientModifiersPacket::decode,
                 ClientModifiersPacket::handle);
+        CHANNEL.registerMessage(id++,
+                ClientBehaviorPacket.class,
+                ClientBehaviorPacket::encode,
+                ClientBehaviorPacket::decode,
+                ClientBehaviorPacket::handle);
     }
 
     private EscalationNetwork() {

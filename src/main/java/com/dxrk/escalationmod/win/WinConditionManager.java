@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod.win;
 
+import com.dxrk.escalationmod.behavior.ActiveEscalations;
 import com.dxrk.escalationmod.config.EscalationConfig;
 import com.dxrk.escalationmod.config.EscalationConfigManager;
 import com.dxrk.escalationmod.data.IEscalationPlayerData;
@@ -32,8 +33,7 @@ public class WinConditionManager {
 
         int clearedCount = 0;
         if (win.clearAllActive) {
-            clearedCount = data.getActiveInstances().size();
-            data.getActiveInstances().clear();
+            clearedCount = ActiveEscalations.clear(player, data);
         }
 
         player.sendSystemMessage(Component.literal(

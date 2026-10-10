@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod.win;
 
+import com.dxrk.escalationmod.behavior.ActiveEscalations;
 import com.dxrk.escalationmod.Escalation;
 import com.dxrk.escalationmod.config.EscalationConfig;
 import com.dxrk.escalationmod.config.EscalationConfigManager;
@@ -81,8 +82,7 @@ public class EndlessCommands {
                 data.setEndlessMode(false);
                 int cleared = 0;
                 if (cfg.winCondition.clearActiveWhenEndlessStopped) {
-                    cleared = data.getActiveInstances().size();
-                    data.getActiveInstances().clear();
+                    cleared = ActiveEscalations.clear(player, data);
                 }
                 int clearedFinal = cleared;
                 ctx.getSource().sendSuccess(() -> Component.literal(

@@ -1,5 +1,6 @@
 package com.dxrk.escalationmod.runtime;
 
+import com.dxrk.escalationmod.behavior.ActiveEscalations;
 import com.dxrk.escalationmod.Escalation;
 import com.dxrk.escalationmod.config.EscalationConfig;
 import com.dxrk.escalationmod.config.EscalationConfigManager;
@@ -109,7 +110,7 @@ public class EscalationScheduler {
         EscalationInstance instance = new EscalationInstance(definition, rarity, currentTick);
 
         data.getSeenPoolIds().add(definition.id);
-        data.getActiveInstances().add(instance);
+        ActiveEscalations.add(player, data, instance);
         if (rarity == Rarity.LEGENDARY) {
             data.incrementLegendaryCountEver();
         }

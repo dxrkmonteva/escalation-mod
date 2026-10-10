@@ -15,6 +15,7 @@ public class EscalationConfig {
     public MercyRuleSection mercyRule = new MercyRuleSection();
     public WinConditionSection winCondition = new WinConditionSection();
     public UiSection ui = new UiSection();
+    public BehaviorSection behavior = new BehaviorSection();
 
     public static class TimingSection {
         public int intervalMinSec = 60;
@@ -94,6 +95,14 @@ public class EscalationConfig {
         public boolean clearActiveWhenEndlessStopped = true;
     }
 
+    /** Каркас behavioral-усложнений (behaviors.json). */
+    public static class BehaviorSection {
+        /** Главный выключатель: false -> ни один behavioral-обработчик не работает. */
+        public boolean enabled = true;
+        /** После скольких ошибок конкретный id отключается (остальные продолжают работать). */
+        public int errorsBeforeDisable = 5;
+    }
+
     public static class UiSection {
         public double toastGrowMs = 220.0;
         public double toastHoldMinSec = 5.0;
@@ -119,6 +128,8 @@ public class EscalationConfig {
         if (mercyRule == null) mercyRule = new MercyRuleSection();
         if (winCondition == null) winCondition = new WinConditionSection();
         if (ui == null) ui = new UiSection();
+        if (behavior == null) behavior = new BehaviorSection();
+        behavior.errorsBeforeDisable = Math.max(1, behavior.errorsBeforeDisable);
 
         timing.intervalMinSec = Math.max(1, timing.intervalMinSec);
         timing.intervalMaxSec = Math.max(timing.intervalMinSec, timing.intervalMaxSec);
